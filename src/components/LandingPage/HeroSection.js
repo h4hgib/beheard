@@ -22,12 +22,28 @@ class HeroSection extends React.Component {
       msTransition: 'all' // 'ms' is the only lowercase vendor prefix
     };
 
+    var logoContainer={
+      height:'70px',
+      left:0, right:0,
+      top:0, bottom:0,
+      margin:'auto',
+      position:'absolute'
+    }
+    var logoStyles = {
+      height:'70px',
+    }
+
     return (
       <div style={divStyle}>
         <Grid item xs={12}>
          <StyledPaper className={this.props.paper}>
            <Grid item xs={6} sm={3}>
-                <LogoPaper className={this.props.paper}>xs=6 sm=3</LogoPaper>
+                <LogoPaper className={this.props.paper}>
+                  <div style={logoContainer}>
+                    <img style={logoStyles} src="/images/logo.png"/>
+                    <p style={{color:'rgb(20,44,93)', margin:'0px',marginTop:'-5px', fontSize:'13px'}}>Bringing people together</p>
+                  </div>
+                </LogoPaper>
            </Grid>
           </StyledPaper>
        </Grid>
@@ -49,13 +65,13 @@ const StyledPaper = styled(Paper)`
 const LogoPaper = styled(Paper)`
    width: 200px;
    height: 100px;
-   background-color: blue;
-
+   background-color: rgba(255,255,255,0.96);
+   border-radius:6px;
    position:absolute;
    left:0; right:0;
    top:0; bottom:0;
    margin:auto;
-
+   text-align:center;
    max-width:100%;
    max-height:100%;
    overflow:auto;
