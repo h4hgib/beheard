@@ -5,6 +5,8 @@ import Typography from 'material-ui/Typography';
 import styled from "styled-components";
 import LoggedIn from "./LoggedIn";
 import InLineQuestionaire from "../components/beheard/InLineQuestionaire";
+import Recorder from '../components/Recorder';
+
 
 const HomePage = function HomePage(props) {
 
@@ -35,6 +37,15 @@ const HomePage = function HomePage(props) {
       </StyledCard>
 
          {/*<LoggedIn/>*/}
+
+      <Recorder/>
+
+      {/*<ReactMic
+          record={this.state.record}
+          className="sound-wave"
+          onStop={this.onStop}
+          strokeColor="#000000"
+          backgroundColor="#FF4081" />*/}
 
     </div>
   );

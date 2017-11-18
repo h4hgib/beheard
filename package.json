@@ -15,6 +15,7 @@
     "react-dom": "latest",
     "react-firebaseui": "^1.0.6",
     "react-jss": "latest",
+    "react-mic": "^9.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "latest",
     "recompose": "latest",
