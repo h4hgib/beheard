@@ -48,4 +48,23 @@ BHService.prototype.getDocumentsInQuery = function (query, render) {
 };
 
 
+
+BHService.prototype.voteUp = function(issueID,vote) {
+  const collection = firebase.firestore().collection('issues');
+  const document = collection.doc(issueID);
+
+  return document.collection('votes').add(vote).then(() => {
+    return firebase.firestore().runTransaction(transaction => {
+      return transaction.get(document).then(doc => {
+        const data = doc.data();
+
+        return transaction.update(document, {
+          numVotes: data.numVotes + 1,
+        });
+      });
+    });
+  });
+};
+
+
 export default BHService;

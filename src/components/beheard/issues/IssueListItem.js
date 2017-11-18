@@ -44,6 +44,7 @@ function IssueListItem(props) {
           </Button>
         </CardActions>
       </Card>
+      <Button raised onClick={() => props.handleVoteUp(props.issue.id)}> Vote Up </Button>
     </div>
   );
 }
