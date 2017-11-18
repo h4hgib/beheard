@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from "styled-components";
 import RecordingsSection from "../components/beheard/presentation/RecordingsSection";
+import BHService from "../service/Issues";
 
 
 class PresentationPage extends React.Component {
 
+  bhs = new BHService() ;
+
   state = {
+    id: "HHPbogCpzG2d1SnsCrGL",
     title: "Government unveils plans for schools 'revolution'",
     overview: "Government unveils plans for schools 'revolution' Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'",
     image: "",
@@ -16,11 +20,15 @@ class PresentationPage extends React.Component {
     editorial: " sdsdfsdf sdf ",
     questions: [
       "https://docs.google.com/forms/d/e/1FAIpQLSfsvGePsx5JYFD7NMJFJhbzok2IhaYttq7vR5D2HNOQdagiyQ/viewform?embedded=true"
-    ]
+    ],
   };
 
   componentDidMount() {
 
+    this.bhs.getAllVoiceReactions(this.state.id, (recordings) => {
+      console.log(recordings);
+      this.setState({"recordings": recordings});
+    })
   }
 
 

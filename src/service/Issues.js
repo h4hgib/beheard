@@ -67,4 +67,25 @@ BHService.prototype.voteUp = function(issueID,vote) {
 };
 
 
+
+
+
+
+BHService.prototype.addReactionVoice = function (issueId, data) {
+  console.log("Adding: ", data)
+  const collection = firebase.firestore().collection('issues').doc(issueId).collection('recordings');
+  return collection.add(data);
+};
+
+
+
+BHService.prototype.getAllVoiceReactions = function (issueId, render) {
+  const query = firebase.firestore()
+    .collection('issues').doc(issueId).collection('recordings')
+    // .orderBy('avgRating', 'desc')
+    .limit(50);
+  this.getDocumentsInQuery(query, render);
+};
+
+
 export default BHService;
