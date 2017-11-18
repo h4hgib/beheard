@@ -16,7 +16,7 @@ const AppBar = function AppBar(props) {
       <StyledMaterialAppBar position="static">
         <Toolbar>
           <StyledToolBarRow>
-            <StyledLeft>Featured</StyledLeft>
+            <StyledLeft style={{marginLeft:'-20px'}}>Featured</StyledLeft>
             <StyledLeft>Housing</StyledLeft>
             <StyledLeft>Traffic</StyledLeft>
             <StyledLeft>Tourism</StyledLeft>

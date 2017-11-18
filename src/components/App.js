@@ -11,6 +11,7 @@ import LandingPage from "../pages/LandingPage";
 
 import LoggedIn from "../pages/LoggedIn";
 import PresentationPage from "../pages/PresentationPage";
+import ArticlePage from "../pages/ArticlePage";
 
 class App extends React.Component {
 
@@ -32,6 +33,7 @@ class App extends React.Component {
               <Route path="/LoggedIn" component={LoggedIn}/>
               <Route path="/issues" component={IssuesPage}/>
               <Route path="/presentation" component={PresentationPage}/>
+              <Route path="/article1" component={ArticlePage}/>
             </Switch>
           </div>
         </BrowserRouter>
