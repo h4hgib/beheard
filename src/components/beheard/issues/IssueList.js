@@ -3,14 +3,13 @@ import {inject, observer} from 'mobx-react';
 
 
 import IssueListItem from "./IssueListItem";
-import BHService from "../../../service/Issues";
+import BH from "../../../service/Issues";
 
-const bhs = new BHService() ;
 
 class IssueList extends React.Component {
 
   handleVoteUp = (issueId) => {
-      bhs.voteUp(issueId, {uid: this.props.auth.currentUser.uid});
+      BH.voteUp(issueId,this.props.auth.currentUser.uid, {uid: this.props.auth.currentUser.uid});
   };
 
 

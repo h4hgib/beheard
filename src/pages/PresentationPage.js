@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
 import RecordingsSection from "../components/beheard/presentation/RecordingsSection";
-import BHService from "../service/Issues";
+import BeHeard from "../service/Issues";
 
 
 class PresentationPage extends React.Component {
 
-  bhs = new BHService() ;
+  bhs = BeHeard ;
 
   state = {
     id: "HHPbogCpzG2d1SnsCrGL",

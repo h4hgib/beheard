@@ -13,6 +13,23 @@ service cloud.firestore {
       allow write: if request.resource.data.uid == request.auth.uid;
     }
 
+     match /issues/{issue_id}/votes/{vote_id} {
+      allow write: if request.path[3] == request.auth.uid;
+    }
+
+     match /issues/{issue_id}/votes/{vote_id} {
+      allow write: if vote_id == request.auth.uid
+            && request.resource.data.keys().hasAll(['vote'])
+            && request.resource.data.size() == 1
+            && request.resource.data.vote == 1;
+    }
+
+
+
+    match /issues/{issue_id} {
+      allow write;
+    }
+
 
   }
 }
