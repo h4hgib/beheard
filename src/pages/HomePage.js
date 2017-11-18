@@ -52,13 +52,6 @@ const IssuePage = function IssuePage(props) {
 
       <Recorder/>
 
-      {/*<ReactMic
-          record={this.state.record}
-          className="sound-wave"
-          onStop={this.onStop}
-          strokeColor="#000000"
-          backgroundColor="#FF4081" />*/}
-
     </div>
   );
 };

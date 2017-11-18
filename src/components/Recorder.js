@@ -1,25 +1,29 @@
 import React from 'react';
 import { ReactMic } from 'react-mic';
-
+import Button from 'material-ui/Button';
 
 class Recorder extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      record: false
+      record: false,
+      blobObject: null,
+      isRecording: false
     }
   }
 
   startRecording = () => {
     this.setState({
-      record: true
+      record: true,
+      isRecording: true
     });
   }
 
   stopRecording = () => {
     this.setState({
-      record: false
+      record: false,
+      isRecording: false
     });
   }
 
@@ -28,21 +32,29 @@ class Recorder extends React.Component {
   }
 
   render() {
-
-      return (
+    return (
+      <div>
+        <ReactMic
+          record={this.state.record}
+          className="sound-wave"
+          onStop={this.onStop}
+          audioBitsPerSecond= {128000}
+          strokeColor="#000000"
+          backgroundColor="#9c27b0" />
 
         <div>
-
-          <ReactMic
-            record={this.state.record}
-            className="sound-wave"
-            onStop={this.onStop}
-            strokeColor="#000000"
-            backgroundColor="#9c27b0" />
-          <button onClick={this.startRecording} type="button">Start</button>
-          <button onClick={this.stopRecording} type="button">Stop</button>
+          <audio ref="audioSource" controls="controls" src={this.state.blobURL}></audio>
         </div>
-      )
+
+        <Button raised color="primary" onClick={this.startRecording}>
+          Record
+        </Button>
+
+        <Button raised color="primary" onClick={this.stopRecording}>
+          Stop
+        </Button>
+      </div>
+    )
   }
 }
 
