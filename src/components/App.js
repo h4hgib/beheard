@@ -7,6 +7,7 @@ import {AuthProvider} from "./Auth/AuthStore";
 import AppShell from "./AppShell";
 import HomePage from "../pages/HomePage";
 import IssuesPage from "../pages/IssuesPage";
+import LandingPage from "../pages/LandingPage";
 
 import LoggedIn from "../pages/LoggedIn";
 import BHService from "../service/Issues";
@@ -31,6 +32,7 @@ class App extends React.Component {
             <Route path="/" component={AppShell}/>
             <Switch>
               <Route exact path="/" component={HomePage}/>
+              <Route exact path="/home" component={LandingPage}/>
               <Route path="/LoggedIn" component={LoggedIn}/>
               <Route path="/issues" component={IssuesPage}/>
               <Route path="/presentation" component={PresentationPage}/>

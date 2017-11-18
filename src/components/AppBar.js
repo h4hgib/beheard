@@ -12,7 +12,8 @@ import LoginAvatar from "./LoginAvatar";
 const AppBar = function AppBar(props) {
   return (
     <div>
-      <MaterialAppBar position="static">
+
+      <StyledMaterialAppBar position="static">
         <Toolbar>
 
           <IconButton color="contrast" aria-label="Menu">
@@ -20,7 +21,7 @@ const AppBar = function AppBar(props) {
           </IconButton>
 
           <Typography type="title" color="inherit">
-            Example App
+            Be Heard
           </Typography>
 
           <StyledToolBarRow>
@@ -30,7 +31,7 @@ const AppBar = function AppBar(props) {
           </StyledToolBarRow>
 
         </Toolbar>
-      </MaterialAppBar>
+      </StyledMaterialAppBar>
     </div>
   );
 };
@@ -43,6 +44,11 @@ const StyledToolBarRow = styled.div`
   flex-direction: row-reverse;
 `;
 
+const StyledMaterialAppBar = styled(MaterialAppBar)`
+  background-color:#fafafa!important;
+  color:#444!important;
+`;
+
 const StyledRight = styled.div`
-  
+
 `;
