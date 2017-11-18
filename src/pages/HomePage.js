@@ -3,10 +3,10 @@ import React from 'react';
 import Card, {CardActions, CardContent} from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import styled from "styled-components";
-import LoggedIn from "./LoggedIn";
 import InLineQuestionaire from "../components/beheard/InLineQuestionaire";
+import {Link} from "react-router-dom";
 
-const HomePage = function HomePage(props) {
+const IssuePage = function IssuePage(props) {
 
 
   return (
@@ -27,8 +27,19 @@ const HomePage = function HomePage(props) {
 
       </StyledCard>
 
+
+            <StyledCard>
+        <CardContent>
+          <Link to={"/issues"}> Issues Page </Link>
+        </CardContent>
+      </StyledCard>
+
+
+
       <StyledCard>
         <CardContent>
+
+
 
          <InLineQuestionaire />
         </CardContent>
@@ -41,7 +52,7 @@ const HomePage = function HomePage(props) {
 };
 
 
-export default HomePage;
+export default IssuePage;
 
 
 const StyledCard = styled(Card)`

@@ -23,8 +23,7 @@ class LoginModal extends React.Component {
         <Dialog keepMounted={false} open={this.props.auth.shouldShowLogin} onRequestClose={this.props.auth.loginHide}>
           <DialogTitle>Login</DialogTitle>
           <DialogContent>
-            <DialogContentText>Login to the sample app below, only google will work in this hosted demo. Facebook will
-              work as soon as you clone this project and give it a facebook login api key.</DialogContentText>
+            <DialogContentText>Login to be heard</DialogContentText>
 
             <FirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
           </DialogContent>
