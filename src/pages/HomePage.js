@@ -20,6 +20,8 @@ const HomePage = function HomePage(props) {
             <Typography type="display1" gutterBottom>
             Home Page
             </Typography>
+            <Link to={"/home"}> View home page </Link>
+
 
         </CardContent>
 

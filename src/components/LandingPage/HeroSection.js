@@ -27,10 +27,11 @@ class HeroSection extends React.Component {
       left:0, right:0,
       top:0, bottom:0,
       margin:'auto',
-      position:'absolute'
+      position:'absolute',
     }
     var logoStyles = {
       height:'70px',
+      marginTop:'-7px'
     }
 
     return (
@@ -41,7 +42,7 @@ class HeroSection extends React.Component {
                 <LogoPaper className={this.props.paper}>
                   <div style={logoContainer}>
                     <img style={logoStyles} src="/images/logo.png"/>
-                    <p style={{color:'rgb(20,44,93)', margin:'0px',marginTop:'-5px', fontSize:'13px'}}>Bringing people together</p>
+                    <p style={{color:'rgb(20,44,93)', margin:'0px',marginTop:'-5px', fontSize:'13px'}}>Giving everyone a voice</p>
                   </div>
                 </LogoPaper>
            </Grid>
@@ -64,7 +65,7 @@ const StyledPaper = styled(Paper)`
 
 const LogoPaper = styled(Paper)`
    width: 200px;
-   height: 100px;
+   height: 115px;
    background-color: rgba(255,255,255,0.96);
    border-radius:6px;
    position:absolute;
