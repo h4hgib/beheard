@@ -10,6 +10,7 @@ import IssuesPage from "../pages/IssuesPage";
 
 import LoggedIn from "../pages/LoggedIn";
 import BHService from "../service/Issues";
+import PresentationPage from "../pages/PresentationPage";
 
 class App extends React.Component {
 
@@ -32,6 +33,7 @@ class App extends React.Component {
               <Route exact path="/" component={HomePage}/>
               <Route path="/LoggedIn" component={LoggedIn}/>
               <Route path="/issues" component={IssuesPage}/>
+              <Route path="/presentation" component={PresentationPage}/>
             </Switch>
           </div>
         </BrowserRouter>

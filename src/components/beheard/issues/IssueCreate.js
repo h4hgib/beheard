@@ -13,6 +13,7 @@ class IssueCreate extends React.Component {
   state = {
     title: '',
     desc: '',
+    numVotes: 1,
   };
 
   constructor(props) {

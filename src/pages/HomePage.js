@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 import Recorder from '../components/Recorder';
 
 
-const IssuePage = function IssuePage(props) {
+const HomePage = function HomePage(props) {
 
 
   return (
@@ -57,7 +57,7 @@ const IssuePage = function IssuePage(props) {
 };
 
 
-export default IssuePage;
+export default HomePage;
 
 
 const StyledCard = styled(Card)`
