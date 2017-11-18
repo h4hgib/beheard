@@ -4,8 +4,9 @@ import Card, {CardActions, CardContent} from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import styled from "styled-components";
 import LoggedIn from "./LoggedIn";
+import InLineQuestionaire from "../components/beheard/InLineQuestionaire";
 
-const PageOne = function PageOne(props) {
+const HomePage = function HomePage(props) {
 
 
   return (
@@ -14,17 +15,8 @@ const PageOne = function PageOne(props) {
         <CardContent>
 
             <Typography type="display1" gutterBottom>
-              Checkout this little Firebase Auth / React / Material-UI boilerplate
+            Home Page
             </Typography>
-            <Typography type="caption" gutterBottom>
-              Also simple usage of react-router and mobx
-            </Typography>
-          <Typography type="body2" gutterBottom>
-              <a href={'https://github.com/cdharris/react-fire-auth-material-boiler/'}>https://github.com/cdharris/react-fire-auth-material-boiler/</a>
-            </Typography>
-
-
-
 
         </CardContent>
 
@@ -35,14 +27,21 @@ const PageOne = function PageOne(props) {
 
       </StyledCard>
 
-         <LoggedIn/>
+      <StyledCard>
+        <CardContent>
+
+         <InLineQuestionaire />
+        </CardContent>
+      </StyledCard>
+
+         {/*<LoggedIn/>*/}
 
     </div>
   );
 };
 
 
-export default PageOne;
+export default HomePage;
 
 
 const StyledCard = styled(Card)`

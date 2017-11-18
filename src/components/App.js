@@ -5,7 +5,8 @@ import withRoot from '../styles/withRoot';
 import {AuthProvider} from "./Auth/AuthStore";
 
 import AppShell from "./AppShell";
-import PageOne from "../pages/PageOne";
+import HomePage from "../pages/HomePage";
+
 import LoggedIn from "../pages/LoggedIn";
 
 class App extends React.Component {
@@ -17,7 +18,7 @@ class App extends React.Component {
           <div>
             <Route path="/" component={AppShell}/>
             <Switch>
-              <Route exact path="/" component={PageOne}/>
+              <Route exact path="/" component={HomePage}/>
               <Route path="/LoggedIn" component={LoggedIn}/>
             </Switch>
           </div>
