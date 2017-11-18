@@ -16,6 +16,8 @@ const theme = createMuiTheme({
 // Configure JSS
 const jss = create(preset());
 jss.options.createGenerateClassName = createGenerateClassName;
+jss.options.insertionPoint = 'insertion-point-jss';
+
 
 export const sheetsManager = new Map();
 
