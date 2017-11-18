@@ -11,13 +11,9 @@ class IssuesPage extends React.Component {
   state = {"issues": []};
 
   componentDidMount() {
-    console.log("asd");
-
-
     BH.getAllIssues((docs) => {
       this.setState({"issues": docs});
     })
-
   }
 
 

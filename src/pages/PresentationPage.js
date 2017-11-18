@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
 import RecordingsSection from "../components/beheard/presentation/RecordingsSection";
-import BeHeard from "../service/Issues";
+import BH from "../service/Issues";
 
 
 class PresentationPage extends React.Component {
 
-  bhs = BeHeard ;
 
   state = {
     id: "HHPbogCpzG2d1SnsCrGL",
@@ -25,11 +24,15 @@ class PresentationPage extends React.Component {
 
   componentDidMount() {
 
-    this.bhs.getAllVoiceReactions(this.state.id, (recordings) => {
+    BH.getIssue(this.props.match.params.issueId).then( (doc) => this.setState(doc));
+
+
+    BH.getAllVoiceReactions(this.state.id, (recordings) => {
       console.log(recordings);
       this.setState({"recordings": recordings});
     })
-  }
+
+    }
 
 
   render() {

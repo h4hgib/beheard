@@ -21,7 +21,7 @@ BeHeardService.prototype.getIssue = function (id) {
 BeHeardService.prototype.getAllIssues = function (render) {
   const query = firebase.firestore()
     .collection('issues')
-    // .orderBy('avgRating', 'desc')
+    .orderBy('numVotes', 'desc')
     .limit(50);
   this.getDocumentsInQuery(query, render);
 };
@@ -31,18 +31,13 @@ BeHeardService.prototype.getDocumentsInQuery = function (query, render) {
 
     let docs = [];
 
-    snapshot.docChanges.forEach(change => {
-      if (change.type === 'added') {
-
-        // console.log(change.doc);
-
-        let data = change.doc.data();
-        data.id = change.doc.id;
-        docs.push(data);
-      }
+    snapshot.docs.forEach(doc => {
+          let data = doc.data();
+          data.id = doc.id;
+          docs.push(data);
     });
 
-    return render(docs);
+    if (docs.length > 0) return render(docs);
 
   });
 };

@@ -6,6 +6,7 @@ import { withStyles } from 'material-ui/styles';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
+import {Link} from "react-router-dom";
 
 const styles = {
   card: {
@@ -39,9 +40,11 @@ function IssueListItem(props) {
           <Button dense color="primary">
             Share
           </Button>
-          <Button dense color="primary">
-            Learn More
-          </Button>
+          <Link to={`/issues/${props.issue.id}`}>
+            <Button dense color="primary">
+              Learn More
+            </Button>
+          </Link>
         </CardActions>
       </Card>
       <Button raised onClick={() => props.handleVoteUp(props.issue.id)}> Vote Up </Button>

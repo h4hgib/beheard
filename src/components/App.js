@@ -27,11 +27,11 @@ class App extends React.Component {
           <div>
             <Route path="/" component={AppShell}/>
             <Switch>
-              <Route exact path="/" component={HomePage}/>
-              <Route exact path="/home" component={LandingPage}/>
-              <Route path="/LoggedIn" component={LoggedIn}/>
-              <Route path="/issues" component={IssuesPage}/>
-              <Route path="/presentation" component={PresentationPage}/>
+              {/*<Route exact path="/" component={HomePage}/>*/}
+              <Route exact path="/" component={LandingPage}/>
+              {/*<Route path="/LoggedIn" component={LoggedIn}/>*/}
+              <Route exact path="/issues" component={IssuesPage}/>
+              <Route path="/issues/:issueId" component={PresentationPage}/>
             </Switch>
           </div>
         </BrowserRouter>
