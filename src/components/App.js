@@ -10,7 +10,6 @@ import IssuesPage from "../pages/IssuesPage";
 import LandingPage from "../pages/LandingPage";
 
 import LoggedIn from "../pages/LoggedIn";
-import BHService from "../service/Issues";
 import PresentationPage from "../pages/PresentationPage";
 
 class App extends React.Component {
@@ -18,9 +17,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    window.onload = () => {
-      window.app = new BHService();
-     };
 
   }
 

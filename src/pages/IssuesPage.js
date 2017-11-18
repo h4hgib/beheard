@@ -3,7 +3,7 @@ import React from 'react';
 
 import styled from "styled-components";
 import IssueList from "../components/beheard/issues/IssueList";
-import BHService from "../service/Issues";
+import BH from "../service/Issues";
 import IssueCreate from "../components/beheard/issues/IssueCreate";
 
 class IssuesPage extends React.Component {
@@ -14,9 +14,7 @@ class IssuesPage extends React.Component {
     console.log("asd");
 
 
-    const bhs = new BHService() ;
-
-    bhs.getAllIssues((docs) => {
+    BH.getAllIssues((docs) => {
       this.setState({"issues": docs});
     })
 

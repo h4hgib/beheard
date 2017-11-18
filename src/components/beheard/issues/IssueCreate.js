@@ -4,9 +4,8 @@ import TextField from 'material-ui/TextField';
 
 
 import Button from 'material-ui/Button';
-import BHService from "../../../service/Issues";
+import BH from "../../../service/Issues";
 
-const bhs = new BHService() ;
 
 class IssueCreate extends React.Component {
 
@@ -29,7 +28,7 @@ class IssueCreate extends React.Component {
 
   submit = () => {
     if (this.props.auth.loginShowIfNot()) {
-      bhs.addIssue({
+      BH.addIssue({
         uid: this.props.auth.currentUser.uid,
         ...this.state
       });

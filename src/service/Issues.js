@@ -3,22 +3,22 @@ import * as firebase from 'firebase'
 
 require('firebase/firestore');
 
-function BHService() {
+function BeHeardService() {
 
 }
 
-BHService.prototype.addIssue = function (data) {
+BeHeardService.prototype.addIssue = function (data) {
   console.log("Adding: ", data)
   const collection = firebase.firestore().collection('issues');
   return collection.add(data);
 };
 
-BHService.prototype.getIssue = function (id) {
+BeHeardService.prototype.getIssue = function (id) {
   return firebase.firestore().collection('issues').doc(id).get();
 };
 
 
-BHService.prototype.getAllIssues = function (render) {
+BeHeardService.prototype.getAllIssues = function (render) {
   const query = firebase.firestore()
     .collection('issues')
     // .orderBy('avgRating', 'desc')
@@ -26,7 +26,7 @@ BHService.prototype.getAllIssues = function (render) {
   this.getDocumentsInQuery(query, render);
 };
 
-BHService.prototype.getDocumentsInQuery = function (query, render) {
+BeHeardService.prototype.getDocumentsInQuery = function (query, render) {
   query.onSnapshot(snapshot => {
 
     let docs = [];
@@ -49,21 +49,22 @@ BHService.prototype.getDocumentsInQuery = function (query, render) {
 
 
 
-BHService.prototype.voteUp = function(issueID,vote) {
-  const collection = firebase.firestore().collection('issues');
-  const document = collection.doc(issueID);
+function updateVoteCount(issueID) {
+  const IssueRef = firebase.firestore().doc(`issues/${issueID}`);
+  const votesCollectionRef = firebase.firestore().collection(`issues/${issueID}/votes`);
 
-  return document.collection('votes').add(vote).then(() => {
-    return firebase.firestore().runTransaction(transaction => {
-      return transaction.get(document).then(doc => {
-        const data = doc.data();
-
-        return transaction.update(document, {
-          numVotes: data.numVotes + 1,
-        });
-      });
-    });
+  return votesCollectionRef.onSnapshot(querySnapshot => {
+    console.log(querySnapshot.size);
+    return IssueRef.update({"numVotes": querySnapshot.size});
   });
+}
+
+BeHeardService.prototype.voteUp = function(issueID,userId) {
+
+  const voteDocRef = firebase.firestore().doc(`issues/${issueID}/votes/${userId}`);
+  voteDocRef.set({vote:1});
+
+  return updateVoteCount(issueID);
 };
 
 
@@ -71,15 +72,14 @@ BHService.prototype.voteUp = function(issueID,vote) {
 
 
 
-BHService.prototype.addReactionVoice = function (issueId, data) {
+BeHeardService.prototype.addReactionVoice = function (issueId, data) {
   console.log("Adding: ", data)
   const collection = firebase.firestore().collection('issues').doc(issueId).collection('recordings');
   return collection.add(data);
 };
 
 
-
-BHService.prototype.getAllVoiceReactions = function (issueId, render) {
+BeHeardService.prototype.getAllVoiceReactions = function (issueId, render) {
   const query = firebase.firestore()
     .collection('issues').doc(issueId).collection('recordings')
     // .orderBy('avgRating', 'desc')
@@ -87,5 +87,7 @@ BHService.prototype.getAllVoiceReactions = function (issueId, render) {
   this.getDocumentsInQuery(query, render);
 };
 
+const BH = new BeHeardService();
 
-export default BHService;
+export default BH;
+
