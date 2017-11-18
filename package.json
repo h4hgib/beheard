@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@trendmicro/react-navbar": "^0.2.6",
     "firebase": "^4.6.2",
     "jss": "^8.1.0",
     "jss-preset-default": "^3.0.0",
@@ -11,13 +12,14 @@
     "mobx": "^3.3.1",
     "mobx-react": "^4.3.4",
     "prop-types": "latest",
-    "react": "latest",
+    "react": "^16.1.1",
     "react-dom": "latest",
     "react-firebaseui": "^1.0.6",
     "react-jss": "latest",
     "react-mic": "^9.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "latest",
+    "react-sticky": "^5.0.8",
     "recompose": "latest",
     "styled-components": "^2.2.3"
   },

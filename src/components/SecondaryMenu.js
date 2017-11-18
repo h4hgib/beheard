@@ -14,16 +14,13 @@ const AppBar = function AppBar(props) {
     <div>
 
       <StyledMaterialAppBar position="static">
-        <Toolbar style={{  width:'1200px', margin:'0 auto'}}>
-
-          <Typography type="title" color="inherit">
-            Be Heard
-          </Typography>
-
+        <Toolbar>
           <StyledToolBarRow>
-            <StyledRight>
-               <LoginAvatar/>
-            </StyledRight>
+            <StyledLeft>Featured</StyledLeft>
+            <StyledLeft>Housing</StyledLeft>
+            <StyledLeft>Traffic</StyledLeft>
+            <StyledLeft>Tourism</StyledLeft>
+            <StyledLeft>Traffic</StyledLeft>
           </StyledToolBarRow>
 
         </Toolbar>
@@ -37,16 +34,17 @@ export default AppBar;
 const StyledToolBarRow = styled.div`
   display:flex;
   flex: 1;
-  flex-direction: row-reverse;
 `;
 
 const StyledMaterialAppBar = styled(MaterialAppBar)`
-  background-color:#fafafa;
+  background-color:#fff;
   color:#444;
-  margin:0 auto;
-  box-shadow:0px;
+  border-bottom:1px solid #eaeaea;
+  box-shadow:none;
+
 `;
 
-const StyledRight = styled.div`
-
+const StyledLeft = styled.div`
+  float:left;
+  margin-right:15px;
 `;
