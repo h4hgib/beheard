@@ -5,6 +5,9 @@ import Typography from 'material-ui/Typography';
 import styled from "styled-components";
 import InLineQuestionaire from "../components/beheard/InLineQuestionaire";
 import HeroSection from "../components/LandingPage/HeroSection";
+import MainContent from "../components/LandingPage/MainContent";
+import Paper from 'material-ui/Paper';
+
 import {Link} from "react-router-dom";
 
 import Recorder from '../components/Recorder';
@@ -16,44 +19,9 @@ const LandingPage = function IssuePage(props) {
   return (
     <div>
       <HeroSection></HeroSection>
-      <StyledCard>
-        <CardContent>
-
-            <Typography type="display1" gutterBottom>
-            Home Page
-            </Typography>
-
-        </CardContent>
-
-        <CardActions>
-            <Typography type="headline" component="h2" gutterBottom>
-            </Typography>
-        </CardActions>
-
-      </StyledCard>
-
-
-            <StyledCard>
-        <CardContent>
-          <Link to={"/issues"}> Issues Page </Link>
-        </CardContent>
-      </StyledCard>
-
-
-
-      <StyledCard>
-        <CardContent>
-
-
-
-         <InLineQuestionaire />
-        </CardContent>
-      </StyledCard>
-
-         {/*<LoggedIn/>*/}
-
-      <Recorder/>
-
+      <Paper>
+        <MainContent></MainContent>
+      </Paper>
     </div>
   );
 };
