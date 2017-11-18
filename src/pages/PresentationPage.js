@@ -5,7 +5,19 @@ import RecordingsSection from "../components/beheard/presentation/RecordingsSect
 
 class PresentationPage extends React.Component {
 
-  state = {};
+  state = {
+    title: "Government unveils plans for schools 'revolution'",
+    overview: "Government unveils plans for schools 'revolution' Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'Government unveils plans for schools 'revolution'",
+    image: "",
+    comments: [
+      {title: "The school is in the wrong part of town", body: "      ", avatar:""},
+      {title: "The school is in the wrong part of town", body: "      ", avatar:""},
+    ],
+    editorial: " sdsdfsdf sdf ",
+    questions: [
+      "https://docs.google.com/forms/d/e/1FAIpQLSfsvGePsx5JYFD7NMJFJhbzok2IhaYttq7vR5D2HNOQdagiyQ/viewform?embedded=true"
+    ]
+  };
 
   componentDidMount() {
 
@@ -16,7 +28,10 @@ class PresentationPage extends React.Component {
     return (
       <PresentationPageContainer>
 
+        {/*<PresentationHero />*/}
+        {/*<PresentationSomething />*/}
 
+        <iframe src={this.state.questions[0]} width="760" height="500">Loading...</iframe>
 
         <RecordingsSection />
 
