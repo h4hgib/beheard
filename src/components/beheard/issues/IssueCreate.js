@@ -13,8 +13,12 @@ class IssueCreate extends React.Component {
   state = {
     title: '',
     desc: '',
-
   };
+
+  constructor(props) {
+    super(props);
+  }
+
 
   handleChange = name => event => {
     this.setState({
@@ -23,12 +27,16 @@ class IssueCreate extends React.Component {
   };
 
   submit = () => {
-    bhs.addIssue(this.state);
+    if (this.props.auth.loginShowIfNot()) {
+      bhs.addIssue({
+        uid: this.props.auth.currentUser.uid,
+        ...this.state
+      });
+    }
   };
 
 
   render() {
-    console.log(this.props);
 
     return (
       <div>

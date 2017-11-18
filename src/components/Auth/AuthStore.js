@@ -31,7 +31,21 @@ const auth = mobx.observable({
     firebase.auth().signOut();
   }),
 
+
+  loginShowIfNot: mobx.action.bound(function () {
+    if (this.currentUser) {
+      return true;
+    } else {
+      this.shouldShowLogin = true;
+      window.location.hash = '#login';
+      return false;
+    }
+
+  }),
+
 });
+
+
 
 
 export const AuthProvider = class AuthProvider extends React.Component {

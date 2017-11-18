@@ -8,6 +8,7 @@ function BHService() {
 }
 
 BHService.prototype.addIssue = function (data) {
+  console.log("Adding: ", data)
   const collection = firebase.firestore().collection('issues');
   return collection.add(data);
 };
