@@ -46,4 +46,5 @@ BHService.prototype.getDocumentsInQuery = function (query, render) {
   });
 };
 
+
 export default BHService;

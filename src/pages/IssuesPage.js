@@ -4,6 +4,7 @@ import React from 'react';
 import styled from "styled-components";
 import IssueList from "../components/beheard/issues/IssueList";
 import BHService from "../service/Issues";
+import IssueCreate from "../components/beheard/issues/IssueCreate";
 
 class IssuesPage extends React.Component {
 
@@ -13,9 +14,9 @@ class IssuesPage extends React.Component {
     console.log("asd");
 
 
-    var bh = new BHService() ;
+    const bhs = new BHService() ;
 
-    bh.getAllIssues((docs) => {
+    bhs.getAllIssues((docs) => {
       this.setState({"issues": docs});
     })
 
@@ -25,6 +26,8 @@ class IssuesPage extends React.Component {
   render() {
     return (
       <IssuePageContainer>
+
+        <IssueCreate />
 
         <IssueList issues={this.state.issues}/>
 
