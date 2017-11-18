@@ -1,17 +1,20 @@
 import React from 'react';
 
+import Button from 'material-ui/Button';
 
 import styled from "styled-components";
 import IssueList from "../components/beheard/issues/IssueList";
 import BH from "../service/Issues";
-import IssueCreate from "../components/beheard/issues/IssueCreate";
+import {Link} from "react-router-dom";
 
 class IssuesPage extends React.Component {
 
   state = {"issues": []};
 
   componentDidMount() {
+    console.log("getting issues");
     BH.getAllIssues((docs) => {
+      console.log("Got Issues:",docs);
       this.setState({"issues": docs});
     })
   }
@@ -21,7 +24,11 @@ class IssuesPage extends React.Component {
     return (
       <IssuePageContainer>
 
-        <IssueCreate />
+        <Link to={"/issue/create"}>
+        <Button raised color="primary">
+          Create Issue
+        </Button>
+        </Link>
 
         <IssueList issues={this.state.issues}/>
 

@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "@trendmicro/react-navbar": "^0.2.6",
+    "draft-js": "^0.10.4",
+    "draftjs-to-html": "^0.7.6",
     "firebase": "^4.6.2",
+    "html-to-draftjs": "^1.0.1",
     "jss": "^8.1.0",
     "jss-preset-default": "^3.0.0",
     "material-ui": "next",
@@ -14,6 +17,7 @@
     "prop-types": "latest",
     "react": "^16.1.1",
     "react-dom": "latest",
+    "react-draft-wysiwyg": "^1.10.12",
     "react-firebaseui": "^1.0.6",
     "react-jss": "latest",
     "react-mic": "^9.0.0",

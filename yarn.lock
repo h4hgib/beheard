@@ -49,6 +49,53 @@
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.4.tgz#ec8438b780baff09254076efe345f30fdb41243e"
 
+"@trendmicro/react-anchor@^0.5.5":
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/@trendmicro/react-anchor/-/react-anchor-0.5.6.tgz#fe13add34e6de15e9214e2e7268dab66fcfd637c"
+  dependencies:
+    prop-types "^15.5.10"
+
+"@trendmicro/react-buttons@^1.0.4":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@trendmicro/react-buttons/-/react-buttons-1.2.1.tgz#dd3f8fa82ed0ea98e0e5841b345a4316bc1be953"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+
+"@trendmicro/react-dropdown@^0.6.13":
+  version "0.6.14"
+  resolved "https://registry.yarnpkg.com/@trendmicro/react-dropdown/-/react-dropdown-0.6.14.tgz#73503421f477778d314248446b1e82829dffda95"
+  dependencies:
+    "@trendmicro/react-anchor" "^0.5.5"
+    "@trendmicro/react-buttons" "^1.0.4"
+    chained-function "^0.5.0"
+    classnames "^2.2.5"
+    dom-helpers "^3.2.1"
+    prop-types "^15.5.8"
+    uncontrollable "^4.1.0"
+    warning "^3.0.0"
+
+"@trendmicro/react-navbar@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@trendmicro/react-navbar/-/react-navbar-0.2.6.tgz#273cf9ca7f0fada6bd926742bc0446964f6f7904"
+  dependencies:
+    "@trendmicro/react-navs" "^0.8.5"
+    chained-function "^0.5.0"
+    classnames "^2.2.5"
+    dom-helpers "^3.2.1"
+    prop-types "^15.5.8"
+    uncontrollable "^4.1.0"
+
+"@trendmicro/react-navs@^0.8.5":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@trendmicro/react-navs/-/react-navs-0.8.6.tgz#a1832d6d97eb870d9988cb48d742c13b27a98774"
+  dependencies:
+    "@trendmicro/react-anchor" "^0.5.5"
+    "@trendmicro/react-dropdown" "^0.6.13"
+    chained-function "^0.5.0"
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -1311,6 +1358,10 @@ chain-function@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/chain-function/-/chain-function-1.0.0.tgz#0d4ab37e7e18ead0bdc47b920764118ce58733dc"
 
+chained-function@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/chained-function/-/chained-function-0.5.0.tgz#2564bbdfdf7803194bebf75a6b2bd041ede23b3a"
+
 chalk@1.1.3, chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -2043,6 +2094,22 @@ dotenv@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
 
+draft-js@^0.10.4:
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/draft-js/-/draft-js-0.10.4.tgz#147741642097c8120d8edc232e9503e8b7fb8d35"
+  dependencies:
+    fbjs "^0.8.15"
+    immutable "~3.7.4"
+    object-assign "^4.1.0"
+
+draftjs-to-html@^0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/draftjs-to-html/-/draftjs-to-html-0.7.6.tgz#95bc55aeeca6c6a7abc242c5616946704c6685c9"
+
+draftjs-utils@^0.8.07:
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/draftjs-utils/-/draftjs-utils-0.8.8.tgz#5835daed95f59d3ee1f96fdcbbb9809772c86490"
+
 duplexer2@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.1.4.tgz#8b12dab878c0d69e3e7891051662a32fc6bddcc1"
@@ -2557,7 +2624,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.1, fbjs@^0.8.16, fbjs@^0.8.5, fbjs@^0.8.9:
+fbjs@^0.8.1, fbjs@^0.8.15, fbjs@^0.8.16, fbjs@^0.8.5, fbjs@^0.8.9:
   version "0.8.16"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -3084,6 +3151,10 @@ html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "3.1.x"
 
+html-to-draftjs@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/html-to-draftjs/-/html-to-draftjs-1.0.1.tgz#64ef414ef84ed48ed6afc81ae5f20c4e811577d2"
+
 html-webpack-plugin@2.29.0:
   version "2.29.0"
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-2.29.0.tgz#e987f421853d3b6938c8c4c8171842e5fd17af23"
@@ -3171,6 +3242,10 @@ ignore@^3.3.3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
 
+immutable@~3.7.4:
+  version "3.7.6"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.7.6.tgz#13b4d3cb12befa15482a26fe1b2ebae640071e4b"
+
 import-local@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/import-local/-/import-local-0.1.1.tgz#b1179572aacdc11c6a91009fb430dbcab5f668a8"
@@ -3244,7 +3319,7 @@ interpret@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.4.tgz#820cdd588b868ffb191a809506d6c9c8f212b1b0"
 
-invariant@^2.2.1, invariant@^2.2.2:
+invariant@^2.1.0, invariant@^2.2.1, invariant@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
@@ -5448,6 +5523,14 @@ react-dom@latest:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-draft-wysiwyg@^1.10.12:
+  version "1.10.12"
+  resolved "https://registry.yarnpkg.com/react-draft-wysiwyg/-/react-draft-wysiwyg-1.10.12.tgz#4a8c24094bde11dfbc540d86acd8321cb72ba01b"
+  dependencies:
+    classnames "^2.2.5"
+    draftjs-utils "^0.8.07"
+    prop-types "^15.5.10"
+
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
@@ -5576,6 +5659,12 @@ react-scrollbar-size@^2.0.2:
     prop-types "^15.5.10"
     react-event-listener "^0.5.0"
 
+react-sticky@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/react-sticky/-/react-sticky-5.0.8.tgz#d5f85f96977f410081d792ab81886c622c5d8b14"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-transition-group@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.2.1.tgz#e9fb677b79e6455fd391b03823afe84849df4a10"
@@ -5597,7 +5686,7 @@ react@^15:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react@latest:
+react@^16.1.1:
   version "16.1.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.1.1.tgz#d5c4ef795507e3012282dd51261ff9c0e824fe1f"
   dependencies:
@@ -6596,6 +6685,12 @@ uglifyjs-webpack-plugin@^0.4.6:
 uid-number@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
+
+uncontrollable@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/uncontrollable/-/uncontrollable-4.1.0.tgz#e0358291252e1865222d90939b19f2f49f81c1a9"
+  dependencies:
+    invariant "^2.1.0"
 
 uniq@^1.0.1:
   version "1.0.1"

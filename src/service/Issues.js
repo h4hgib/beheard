@@ -17,16 +17,19 @@ BeHeardService.prototype.getIssue = function (id) {
   return firebase.firestore().collection('issues').doc(id).get();
 };
 
+BeHeardService.prototype._withId = function (doc) {
+  return {...doc.data(), id:doc.id};
+}
 
 BeHeardService.prototype.getAllIssues = function (render) {
   const query = firebase.firestore()
     .collection('issues')
     .orderBy('numVotes', 'desc')
     .limit(50);
-  this.getDocumentsInQuery(query, render);
+  this._getDocumentsInQuery(query, render);
 };
 
-BeHeardService.prototype.getDocumentsInQuery = function (query, render) {
+BeHeardService.prototype._getDocumentsInQuery = function (query, render) {
   query.onSnapshot(snapshot => {
 
     let docs = [];
@@ -41,6 +44,8 @@ BeHeardService.prototype.getDocumentsInQuery = function (query, render) {
 
   });
 };
+
+
 
 
 
@@ -79,7 +84,7 @@ BeHeardService.prototype.getAllVoiceReactions = function (issueId, render) {
     .collection('issues').doc(issueId).collection('recordings')
     // .orderBy('avgRating', 'desc')
     .limit(50);
-  this.getDocumentsInQuery(query, render);
+  this._getDocumentsInQuery(query, render);
 };
 
 const BH = new BeHeardService();
