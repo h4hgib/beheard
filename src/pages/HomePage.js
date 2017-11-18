@@ -6,6 +6,9 @@ import styled from "styled-components";
 import InLineQuestionaire from "../components/beheard/InLineQuestionaire";
 import {Link} from "react-router-dom";
 
+import Recorder from '../components/Recorder';
+
+
 const IssuePage = function IssuePage(props) {
 
 
@@ -46,6 +49,15 @@ const IssuePage = function IssuePage(props) {
       </StyledCard>
 
          {/*<LoggedIn/>*/}
+
+      <Recorder/>
+
+      {/*<ReactMic
+          record={this.state.record}
+          className="sound-wave"
+          onStop={this.onStop}
+          strokeColor="#000000"
+          backgroundColor="#FF4081" />*/}
 
     </div>
   );
