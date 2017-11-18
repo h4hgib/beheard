@@ -4,11 +4,23 @@ import firebase from 'firebase';
 import {inject, observer} from 'mobx-react';
 
 // Configure Firebase.
-const config = {
-  apiKey: "AIzaSyDDw5z1TDt7q9TSPCmC0jvzt4nx1DVBpX0",
-  authDomain: "boilerfire-materialreact.firebaseapp.com",
-  projectId: "boilerfire-materialreact",
-};
+var config = {
+    apiKey: process.env.REACT_APP_APIKEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASEURL,
+    projectId: process.env.REACT_APP_PROJECTID,
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID
+  };
+
+// var config = {
+//     apiKey: "AIzaSyCF3P8YOYyjK17fghY_jUvhGEZfq8EFGPQ",
+//     authDomain: "adventuretime-beheard.firebaseapp.com",
+//     databaseURL: "https://adventuretime-beheard.firebaseio.com",
+//     projectId: "adventuretime-beheard",
+//     storageBucket: "adventuretime-beheard.appspot.com",
+//     messagingSenderId: "686718923773"
+//   };
 
 firebase.initializeApp(config);
 
