@@ -25,7 +25,7 @@ BeHeardService.prototype.getAllIssues = function (render) {
   const query = firebase.firestore()
     .collection('issues')
     .orderBy('numVotes', 'desc')
-    .limit(50);
+    .limit(100);
   this._getDocumentsInQuery(query, render);
 };
 
@@ -73,9 +73,32 @@ BeHeardService.prototype.addComment = function(issueId,comment) {
 };
 
 BeHeardService.prototype.getAllComments = function(issueId,loaded) {
-  const query = firebase.firestore().collection(`issues/${issueId}/comments`);
+  const query = firebase.firestore().collection(`issues/${issueId}/comments`)
+    .orderBy('numVotes', 'desc');
    this._getDocumentsInQuery(query, loaded);
 };
+
+
+
+function updateCommentVoteCount(issueID, commentId) {
+  const IssueRef = firebase.firestore().doc(`issues/${issueID}/comments/${commentId}`);
+  const votesCollectionRef = firebase.firestore().collection(`issues/${issueID}/comments/${commentId}/votes`);
+
+  return votesCollectionRef.onSnapshot(querySnapshot => {
+    console.log(querySnapshot.size);
+    return IssueRef.update({"numVotes": querySnapshot.size});
+  });
+}
+
+BeHeardService.prototype.voteUpComment = function(issueID,commentID, userId) {
+
+  const voteCommentDocRef = firebase.firestore().doc(`issues/${issueID}/comments/${commentID}/votes/${userId}`);
+  voteCommentDocRef.set({vote:1, uid:userId});
+
+  return updateCommentVoteCount(issueID, commentID);
+};
+
+
 
 
 
@@ -101,13 +124,11 @@ BeHeardService.prototype.getAllReactions = function(issueId,loaded) {
 };
 
 
-
 BeHeardService.prototype.addReactionVoice = function (issueId, data) {
   console.log("Adding: ", data);
   const collection = firebase.firestore().collection('issues').doc(issueId).collection('recordings');
   return collection.add(data);
 };
-
 
 BeHeardService.prototype.getAllVoiceReactions = function (issueId, render) {
   const query = firebase.firestore()

@@ -21,15 +21,23 @@ service cloud.firestore {
             && request.resource.data.vote == 1;
     }
     match /issues/{issue_id} {
-      allow write;
+      allow write: if request.auth.uid;
     }
      match /issues/{issue_id}/reactions/{uid} {
       allow write: if request.auth.uid && uid == request.auth.uid;
     }
      match /issues/{issue_id}/reactions/{vote_id} {
-      allow write;
+      allow write: if request.auth.uid;
     }
 
+
+
+     match /issues/{issue_id}/comments/{commentID} {
+      allow write: if request.auth.uid;
+    }
+     match /issues/{issue_id}/comments/{commentID}/votes {
+      allow write: if request.auth.uid;
+    }
 
   }
 }

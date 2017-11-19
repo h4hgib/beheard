@@ -16,10 +16,15 @@ class Component extends React.Component {
   componentDidMount() {
 
     BH.getAllComments(this.props.issueId, (comments) => {
-      console.log(comments);
+      // console.log("comments", comments);
       this.setState({"comments": comments});
     });
 
+  }
+
+  handleVoteUp = (commentId) => {
+    // console.log("voting up",commentId)
+      return BH.voteUpComment(this.props.issueId, commentId, this.props.auth.currentUser.uid);
   }
 
   render() {
@@ -28,7 +33,7 @@ class Component extends React.Component {
       <div>
         {this.state.comments && this.state.comments.length > 0 && (
           this.state.comments.map((comment) => {
-            return <CommentListItem key={comment.id} comment={comment}/>;
+            return <CommentListItem key={comment.id} comment={comment} handleVoteUp={this.handleVoteUp}/>;
           })
         )}
       </div>

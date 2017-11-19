@@ -1,12 +1,22 @@
 import React from 'react';
 import {inject, observer} from 'mobx-react';
-import BH from "../../../service/Issues";
 import styled from 'styled-components';
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
 import Avatar from 'material-ui/Avatar';
 
 class Component extends React.Component {
+
+  state = {
+    voted: false,
+  };
+
+  handleVoteUp = () => {
+    this.props.handleVoteUp(this.props.comment.id);
+    this.setState({'voted': true});
+
+  };
+
 
   render() {
 
@@ -19,6 +29,12 @@ class Component extends React.Component {
         )}  </div>
         <div> {this.props.comment.title} </div>
         <div> {this.props.comment.content} </div>
+
+        {this.state.voted ?
+          <Button raised disabled> Vote Up </Button>
+          : <Button raised onClick={this.handleVoteUp} > Vote Up </Button>
+        }
+
       </StyledContainer>
     );
   }
