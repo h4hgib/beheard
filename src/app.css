@@ -28,3 +28,7 @@ p span strong {
   color:#444!important;
   background-color: rgba(0,0,0,0)!important;
 }
+
+.sticky{
+  z-index: 999;
+}
