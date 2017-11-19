@@ -24,7 +24,10 @@ class TabsSubPage extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    var imageContainerStyle = {
+      padding:'20px',
+      marginTop:'15px'
+    }
     return (
 <div>
        <h1 style={{fontSize:'22px', marginTop:'40px', marginBottom:'26px'}}>Open Data</h1>
@@ -40,26 +43,26 @@ class TabsSubPage extends React.Component {
           textColor="primary"
           centered
         >
-          <Tab label="Item One" />
-          <Tab label="Item Two" />
-          <Tab label="Item Three" />
+          <Tab label="Demographics" />
+          <Tab label="Sentiment Analysis" />
+          <Tab label="Cultural Stats" />
         </Tabs>
 
         {(this.state.value === 0) && (
-          <div>
-                <img src="/images/articlebg.png" />
+          <div style={imageContainerStyle}>
+                <img style={{maxWidth:'100%'}} src="/images/data-shot.png" />
           </div>
         )}
 
         {(this.state.value === 1) && (
           <div>
-                <img src="/images/articlebg.png" />
+                <img style={{maxWidth:'100%'}} src="/images/data-shot.png" />
           </div>
         )}
 
         {(this.state.value === 2) && (
           <div>
-              <img src="/images/articlebg.png" />
+              <img style={{maxWidth:'100%'}} src="/images/data-shot.png" />
           </div>
         )}
 
