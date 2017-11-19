@@ -1,9 +1,11 @@
 import React from 'react';
 import firebase from 'firebase';
-
+import {inject, observer} from 'mobx-react';
 import { ReactMic } from 'react-mic';
 import Button from 'material-ui/Button';
 import Icon from 'material-ui/Icon';
+import BH from "../service/Issues";
+
 
 
 class Recorder extends React.Component {
@@ -43,9 +45,14 @@ class Recorder extends React.Component {
   }
 
   saveRecording = () => {
+    const issueId = this.props.issueId;
+    const userId = this.props.auth.currentUser.uid;
     const file = this.state.blobFile;
     const storageRef = firebase.storage().ref(`recordings/${file.timeStamp}`);
-    const task = storageRef.put(file.blob);
+    storageRef.put(file.blob).then(function(snapshot) {
+      const url = {url: snapshot.task.metadata_.downloadURLs[0]};
+      BH.addReactionVoice(issueId, userId, url)
+    });
   }
 
   render() {
@@ -131,4 +138,5 @@ class Recorder extends React.Component {
   }
 }
 
-export default Recorder;
+export default inject('auth')(observer(Recorder));
+

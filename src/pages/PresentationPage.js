@@ -39,14 +39,10 @@ class PresentationPage extends React.Component {
 
     BH.getIssue(this.props.match.params.issueId).then((doc) => {
       const docdata = {...doc.data(), id: doc.id};
+      const id = doc.id
       console.log(docdata);
 
       this.setState(docdata);
-
-      BH.getAllVoiceReactions(this.state.id, (recordings) => {
-        console.log(recordings);
-        this.setState({"recordings": recordings});
-      })
 
     });
 
@@ -60,7 +56,7 @@ class PresentationPage extends React.Component {
             <HeroSection title={this.state.title} bgUrl={this.state.bgUrl}></HeroSection>
 
             <Paper>
-              <MainContent desc={this.state.desc} content={this.state.content}>
+              <MainContent desc={this.state.desc} content={this.state.content} issueId={this.state.id} >
 
                 {this.state.questionsLink && (
                                   <StyledQContainer>
@@ -89,7 +85,7 @@ class PresentationPage extends React.Component {
             <CommentListView issueId={this.state.id}/>
             <CommentCreate issueId={this.state.id}/>
 
-        <RecordingsSection/>
+        <RecordingsSection issueId={this.state.id}/>
           </div>
           )}
 
@@ -106,6 +102,7 @@ class PresentationPage extends React.Component {
 }
 
 export default PresentationPage;
+
 
 
 const StyledIframe = styled.iframe`

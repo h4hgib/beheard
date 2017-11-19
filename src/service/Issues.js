@@ -124,10 +124,10 @@ BeHeardService.prototype.getAllReactions = function(issueId,loaded) {
 };
 
 
-BeHeardService.prototype.addReactionVoice = function (issueId, data) {
+BeHeardService.prototype.addReactionVoice = function (issueId, userId, data) {
   console.log("Adding: ", data);
-  const collection = firebase.firestore().collection('issues').doc(issueId).collection('recordings');
-  return collection.add(data);
+  const voteDocRef = firebase.firestore().doc(`issues/${issueId}/recordings/${userId}`);
+  return voteDocRef.set(data);
 };
 
 BeHeardService.prototype.getAllVoiceReactions = function (issueId, render) {
