@@ -47,7 +47,7 @@ function IssueListItem(props) {
           </Button>
           { props.issue && (
             <Link to={`/issues/${props.issue.id}`}>
-            <Button dense color="primary">
+            <Button raised dense color="primary">
               View More
             </Button>
           </Link>

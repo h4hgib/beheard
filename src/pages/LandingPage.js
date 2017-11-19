@@ -24,7 +24,6 @@ const LandingPage = function LandingPage(props) {
       <Paper>
 
         <MainContent></MainContent>
-        <StatsSubPage />
       </Paper>
     </div>
   );

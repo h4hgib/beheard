@@ -31,6 +31,8 @@ const StickyNavbar = ({ state, actions }) => {
             <div style={{marginTop:'100px'}}>
               <PageContent sectionName={'Traffic and Tourism'} />
             </div>
+
+
         </StickyContainer>
     );
 };

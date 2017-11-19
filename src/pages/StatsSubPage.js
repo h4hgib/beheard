@@ -8,6 +8,8 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     marginTop: theme.spacing.unit * 3,
+    maxWidth: 800,
+    margin: 'auto auto'
   },
 });
 
@@ -24,7 +26,13 @@ class TabsSubPage extends React.Component {
     const { classes } = this.props;
 
     return (
+<div>
+       <h1 style={{fontSize:'22px', marginTop:'40px', marginBottom:'26px'}}>Open Data</h1>
+         <hr />
+              <br />
       <Paper className={classes.root}>
+
+
         <Tabs
           value={this.state.value}
           onChange={this.handleChange}
@@ -39,25 +47,26 @@ class TabsSubPage extends React.Component {
 
         {(this.state.value === 0) && (
           <div>
-        results 1
+                <img src="/images/articlebg.png" />
           </div>
         )}
 
         {(this.state.value === 1) && (
           <div>
-sdfsf
+                <img src="/images/articlebg.png" />
           </div>
         )}
 
         {(this.state.value === 2) && (
           <div>
-sdfdsf
+              <img src="/images/articlebg.png" />
           </div>
         )}
 
 
 
       </Paper>
+</div>
     );
   }
 }

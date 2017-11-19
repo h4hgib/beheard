@@ -8,6 +8,7 @@ import Grid from 'material-ui/Grid';
 import Navbar from '@trendmicro/react-navbar';
 import StickyNavbar from './StickyNavbar';
 import Radio, { RadioGroup } from 'material-ui/Radio';
+import StatsSubPage from "../../pages/StatsSubPage";
 
 class MainContent extends React.Component {
 
@@ -39,7 +40,13 @@ class MainContent extends React.Component {
                  state={this.state}
                  actions={this.actions}
              />
+
+            <StatsSubPage />
         </div>
+
+
+
+
         <div style={{marginTop:'100px','height':'200px', width:'100%', background:'#eaeaea'}}></div>
       </div>
     )
