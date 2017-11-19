@@ -37,7 +37,8 @@ class MainContent extends React.Component {
     var recorderStyle = {
       padding:'20px',
       background:'#f9f9f9',
-      borderRadius:'6px'
+      borderRadius:'6px',
+      height:'360px'
     }
 
     return (

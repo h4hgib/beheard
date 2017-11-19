@@ -3,6 +3,7 @@ import firebase from 'firebase';
 
 import { ReactMic } from 'react-mic';
 import Button from 'material-ui/Button';
+import Icon from 'material-ui/Icon';
 
 
 class Recorder extends React.Component {
@@ -48,6 +49,50 @@ class Recorder extends React.Component {
   }
 
   render() {
+    var recordButton = {
+      fontSize: 40,
+      color:'#fff',
+      background:'#42b0f4',
+      borderRadius:'50%',
+      padding:'5px'
+    }
+    var stopButton = {
+      fontSize: 40,
+      color:'#fff',
+      background:'#5b5a5a',
+      borderRadius:'50%',
+      padding:'5px',
+      cursor: 'pointer',
+    }
+    var saveButton = {
+      fontSize: 40,
+      color:'#fff',
+      background:'#5b5a5a',
+      borderRadius:'50%',
+      padding:'5px',
+      cursor: 'pointer',
+    }
+    var iconContainerStyle = {
+      margin:'0 auto',
+      width:'50%'
+    }
+    var buttonContainerStyle = {
+      width:'100px',
+      textAlign:'center',
+      float:'left',
+      marginLeft:'-20px'
+    }
+    var buttonTextStyle = {
+      clear:'both', margin:'0 auto',
+      fontSize:'16px'
+    }
+    var buttonDock = {
+      background:'#f2f2f2',
+      padding:'15px',
+      position:'relative',
+      float:'left',
+      borderRadius:'5px'
+    }
     return (
       <div>
         <ReactMic
@@ -56,23 +101,31 @@ class Recorder extends React.Component {
           onStop={this.onStop}
           audioBitsPerSecond= {128000}
           strokeColor="#000000"
-          backgroundColor="#9c27b0" />
+          backgroundColor="#fff"
+          style={{borderRadius:'6px'}} />
 
         <div>
           <audio ref="audioSource" controls="controls" src={this.state.blobURL}></audio>
         </div>
 
-        <Button raised color="primary" onClick={this.startRecording}>
-          Record
-        </Button>
+        <div style={buttonDock}>
+          <div style={buttonContainerStyle}>
+          <div style={iconContainerStyle}><Icon className = 'button' onClick={this.startRecording} style={recordButton}>mic</Icon></div>
+          <div style={buttonTextStyle}> Record </div>
+          </div>
 
-        <Button raised color="primary" onClick={this.stopRecording}>
-          Stop
-        </Button>
+          <div style={buttonContainerStyle}>
+          <div style={iconContainerStyle}><Icon className = 'button' onClick={this.stopRecording} style={stopButton}>stop</Icon></div>
+          <div style={buttonTextStyle}>Stop</div>
+          </div>
 
-        <Button raised color="primary" onClick={this.saveRecording}>
-          Save
-        </Button>
+          <div style={buttonContainerStyle}>
+          <div style={iconContainerStyle}><Icon className = 'button' onClick={this.saveRecording} style={saveButton}>save</Icon></div>
+          <div style={buttonTextStyle}> Save </div>
+          </div>
+        </div>
+
+
       </div>
     )
   }
