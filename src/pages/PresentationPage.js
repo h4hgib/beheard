@@ -67,23 +67,17 @@ class PresentationPage extends React.Component {
 
 
 
+                        {this.state.id && (
+                          <div>
 
-              </MainContent>
-
-            </Paper>
-
-
-        {this.state.id && (
-          <div>
-
-            <br/>
-            <br/>
-            <RecordingListView issueId={this.state.id}/>
-            {/*<RecordingCreate issueId={this.state.id} />*/}
-            <br/>
-            <br/>
-            <CommentListView issueId={this.state.id}/>
-            <CommentCreate issueId={this.state.id}/>
+                            <br/>
+                            <br/>
+                            <RecordingListView issueId={this.state.id}/>
+                            {/*<RecordingCreate issueId={this.state.id} />*/}
+                            <br/>
+                            <br/>
+                            <CommentListView issueId={this.state.id}/>
+                            <CommentCreate issueId={this.state.id}/>
 
         <RecordingsSection issueId={this.state.id}/>
           </div>
@@ -91,9 +85,11 @@ class PresentationPage extends React.Component {
 
 
 
-            {/*<iframe src={this.state.questions[0]} width="760" height="500">Loading...</iframe>*/}
+
+              </MainContent>
 
 
+            </Paper>
 
       </div>
     );
