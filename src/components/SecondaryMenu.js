@@ -17,10 +17,16 @@ const AppBar = function AppBar(props) {
         <Toolbar>
           <StyledToolBarRow>
             <StyledLeft style={{marginLeft:'-20px'}}>Featured</StyledLeft>
-            <StyledLeft>Housing</StyledLeft>
-            <StyledLeft>Traffic</StyledLeft>
-            <StyledLeft>Tourism</StyledLeft>
-            <StyledLeft>Traffic</StyledLeft>
+            <StyledLeft>Housing & Employment</StyledLeft>
+            <StyledLeft>Traffic & Tourism</StyledLeft>
+            <StyledLeft>Creative Realm</StyledLeft>
+            <StyledLeft>Education</StyledLeft>
+            <StyledLeft>Health</StyledLeft>
+            <StyledLeft>Sports</StyledLeft>
+            <StyledLeft>Whats On</StyledLeft>
+            <StyledLeft>Heritage & History</StyledLeft>
+            <StyledLeft>Laws & Legislation</StyledLeft>
+            <StyledLeft>Tax & Economy</StyledLeft>
           </StyledToolBarRow>
 
         </Toolbar>
@@ -47,4 +53,5 @@ const StyledMaterialAppBar = styled(MaterialAppBar)`
 const StyledLeft = styled.div`
   float:left;
   margin-right:15px;
+  text-align: center;
 `;

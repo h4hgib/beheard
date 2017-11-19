@@ -6,6 +6,11 @@ service cloud.firestore {
       allow write: if request.resource.data.uid == request.auth.uid;
     }
 
+    match /{document=**} {
+      allow read;
+      allow write;
+    }
+
 
      match /issues/{document=**} {
       allow write: if request.resource.data.uid == request.auth.uid;
@@ -37,6 +42,11 @@ service cloud.firestore {
     }
      match /issues/{issue_id}/comments/{commentID}/votes {
       allow write: if request.auth.uid;
+    }
+
+        match /{document=**} {
+      allow read;
+      allow write;
     }
 
   }

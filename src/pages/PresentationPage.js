@@ -65,7 +65,7 @@ class PresentationPage extends React.Component {
                 {this.state.questionsLink && (
                                   <StyledQContainer>
 
-                <StyledIframe src={this.state.questionsLink} width="650" height="300" >Loading...</StyledIframe>
+                <StyledIframe src={this.state.questionsLink} width="650" height="500" >Loading...</StyledIframe>
                 </StyledQContainer>
                 )}
 

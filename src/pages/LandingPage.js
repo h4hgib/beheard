@@ -12,6 +12,7 @@ import {Link} from "react-router-dom";
 
 import Recorder from '../components/Recorder';
 import IssuesPage from "./IssuesPage";
+import StatsSubPage from "./StatsSubPage";
 
 
 const LandingPage = function LandingPage(props) {
@@ -23,6 +24,7 @@ const LandingPage = function LandingPage(props) {
       <Paper>
         <IssuesPage/>
         <MainContent></MainContent>
+        <StatsSubPage />
       </Paper>
     </div>
   );
