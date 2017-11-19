@@ -10,7 +10,10 @@ import ReactionListItem from "./ReactionListItem";
 class Component extends React.Component {
 
   state = {
-    reactions: []
+    reactions: [],
+    reactionsByKey: {
+
+    }
   };
 
   componentDidMount() {
@@ -18,19 +21,33 @@ class Component extends React.Component {
     BH.getAllReactions(this.props.issueId, (reactions) => {
       console.log("Reactions", reactions);
       this.setState({"reactions": reactions});
+
+      let reactionsByKey = {};
+      for (let r in reactions) {
+        if (reactionsByKey.hasOwnProperty(reactions[r].reaction)) {
+           reactionsByKey[reactions[r].reaction] =  reactionsByKey[reactions[r].reaction] +1;
+
+        } else {
+           reactionsByKey[reactions[r].reaction] = 1;
+        }
+
+      }
+      this.setState({"reactionsByKey": reactionsByKey});
     });
 
   }
 
   render() {
 
+    var items = [];
+
+    for (let r in this.state.reactionsByKey) {
+      items.push(<ReactionListItem key={r} reaction={r} count={this.state.reactionsByKey[r]} />);
+    }
+
     return (
       <div>
-        {this.state.reactions && this.state.reactions.length > 0 && (
-          this.state.reactions.map((reaction) => {
-            return <ReactionListItem key={reaction.id} reaction={reaction.reaction}/>;
-          })
-        )}
+        {items}
       </div>
     );
   }
