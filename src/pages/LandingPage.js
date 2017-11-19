@@ -11,6 +11,7 @@ import Paper from 'material-ui/Paper';
 import {Link} from "react-router-dom";
 
 import Recorder from '../components/Recorder';
+import IssuesPage from "./IssuesPage";
 
 
 const LandingPage = function LandingPage(props) {
@@ -20,6 +21,7 @@ const LandingPage = function LandingPage(props) {
     <div>
       <HeroSection></HeroSection>
       <Paper>
+        <IssuesPage/>
         <MainContent></MainContent>
       </Paper>
     </div>

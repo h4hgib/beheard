@@ -65,7 +65,10 @@ class PresentationPage extends React.Component {
               <MainContent content={this.state.content}></MainContent>
             </Paper>
 
-            <ReactionListView issueId={this.state.id}/>
+
+        {this.state.id && (
+          <div>
+           <ReactionListView issueId={this.state.id}/>
             <ReactionCreate issueId={this.state.id}/>
             <br/>
             <br/>
@@ -76,9 +79,15 @@ class PresentationPage extends React.Component {
             <CommentListView issueId={this.state.id}/>
             <CommentCreate issueId={this.state.id}/>
 
+        <RecordingsSection/>
+          </div>
+          )}
+
+
+
             {/*<iframe src={this.state.questions[0]} width="760" height="500">Loading...</iframe>*/}
 
-            <RecordingsSection/>
+
 
       </div>
     );

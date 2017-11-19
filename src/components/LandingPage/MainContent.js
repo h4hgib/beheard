@@ -29,7 +29,7 @@ class MainContent extends React.Component {
 
     return (
       <div>
-        <div style={{'max-width':'1200px', margin:'0 auto'}}>
+        <div style={{'maxWidth':'1200px', margin:'0 auto'}}>
            <Grid item xs={12}>
             <div style={tagLineStyle}>
               <h1 style={tagLineFontStyle}>The #1 platform in Gibraltar for social understanding</h1>
