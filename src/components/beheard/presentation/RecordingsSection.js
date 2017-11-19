@@ -24,8 +24,8 @@ class RecordingsSection extends React.Component {
     return (
       <div>
         
-        {this.state.recordings && this.state.recordings.map((rec) => 
-            <div> 
+        {this.state.recordings && this.state.recordings.map((rec, idx) => 
+            <div key={idx}> 
                 <audio ref="audioSource" controls="controls" src={rec.url}></audio>
             </div>)}
 
