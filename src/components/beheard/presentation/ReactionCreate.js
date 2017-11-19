@@ -32,15 +32,23 @@ class ReactionCreate extends React.Component {
   };
 
   render() {
+    var emojiStyle = {
+      width:'46px',
 
+    }
+    var reactionButtonStyle = {
+      width:'60px',
+      minWidth:'60px'
+    }
 
     return (
+
       <StyledContainer>
 
         {this.emojis.map((emoji) => (
-          <Button key={emoji} color="primary" onClick={this.submit(emoji)}>
+          <Button style={reactionButtonStyle} key={emoji} color="primary" onClick={this.submit(emoji)}>
 
-            <img src={`https://abs.twimg.com/emoji/v2/72x72/${emoji}.png`}/>
+            <img style={emojiStyle} src={`https://abs.twimg.com/emoji/v2/72x72/${emoji}.png`}/>
 
           </Button>
 
@@ -56,5 +64,9 @@ export default inject('auth')(observer(ReactionCreate));
 
 
 const StyledContainer = styled.div`
-    border: 4px solid blue;
+    float:left;
+    background:#fff;
+    border-radius:40px;
+    padding:8px;
+    clear:both;
 `;

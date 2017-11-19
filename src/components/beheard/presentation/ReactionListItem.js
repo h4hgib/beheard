@@ -9,13 +9,18 @@ import Badge from "material-ui/Badge";
 class Component extends React.Component {
 
   render() {
-    console.log("reaction list item", this.props);
+    //console.log("reaction list item", this.props);
 
+    var imgStyle={
+      width:'24px'
+    }
+    var countStyle = {
+      clear:'both'
+    }
     return (
       <StyledContainer>
-        <Typography type="caption"> Reaction: </Typography>
-        <img src={`https://raw.githubusercontent.com/twitter/twemoji/gh-pages/36x36/${this.props.reaction}.png`}/>
-        <Badge colorPrimary badgeContent={this.props.count}/>
+        <img style={imgStyle} src={`https://raw.githubusercontent.com/twitter/twemoji/gh-pages/36x36/${this.props.reaction}.png`}/>
+        <Badge style={countStyle} badgeContent={this.props.count}/>
       </StyledContainer>
     );
   }
@@ -25,5 +30,14 @@ export default inject('auth')(observer(Component));
 
 
 const StyledContainer = styled.div`
-    border: 1px solid blue;
+  float: left;
+  margin-left:10px;
+  margin-bottom:5px;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  float:left;
+  background:#fff;
+  border-radius:100%;
+  clear:both;
 `;

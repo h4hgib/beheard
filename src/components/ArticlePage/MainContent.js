@@ -68,10 +68,16 @@ class MainContent extends React.Component {
       padding:'20px',
       background:'#f9f9f9',
       borderRadius:'6px',
-      height:'360px'
+      height:'574px',
+      clear:'both',
     }
     var overviewStyle = {
       marginBottom:'20px'
+    }
+    var reactionContainerStyle = {
+      marginBottom:'20px',
+      width:'100%',
+      float:'left'
     }
 
     return (
@@ -88,16 +94,21 @@ class MainContent extends React.Component {
                   </Typography>
                 </div>
 
-                {this.state.id && (<div>
-                    <ReactionListView issueId={this.state.id}/>
-                   <ReactionCreate issueId={this.state.id}/>
-                  </div>
-                )}
-
                 <div style={recorderStyle}>
-                  <h1>Be Heard</h1>
-                  <p>Press record and tell us what you think</p>
-                  <Recorder />
+                  <h1>Share Your Reaction</h1>
+                  <div style={reactionContainerStyle}>
+                  {this.state.id && (<div>
+                    <ReactionListView issueId={this.state.id}/>
+                    <ReactionCreate issueId={this.state.id}/>
+                    </div>
+                  )}
+                  </div>
+                  <hr></hr>
+                  <div style={{float:'left'}}>
+                    <h1>Be Heard</h1>
+                    <p style={{'clear':'both'}}>Press record and tell us what you think</p>
+                    <Recorder />
+                  </div>
                 </div>
                 <Typography type="subheading" style={contentStyle}>
                   {this.props.content ? <RawBody content={this.props.content}/> : <Skeleton count={10}/>}

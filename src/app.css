@@ -20,9 +20,11 @@ p span{
   font-size:18px!important;
   line-height:26px!important;
   color:#444!important;
+  background-color: rgba(0,0,0,0)!important;
 }
 
 p span strong {
   font-family: "Merriweather", Georgia, Serif!important;
   color:#444!important;
+  background-color: rgba(0,0,0,0)!important;
 }
