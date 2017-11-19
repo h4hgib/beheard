@@ -75,7 +75,7 @@ class MainContent extends React.Component {
       marginBottom:'20px'
     }
     var reactionContainerStyle = {
-      marginBottom:'20px',
+      marginBottom:'3px',
       width:'100%',
       float:'left'
     }
@@ -103,7 +103,7 @@ class MainContent extends React.Component {
                     </div>
                   )}
                   </div>
-                  <hr></hr>
+                  <div style={{borderBottom:'1px solid #f2f2f2', width:'100%', height:'20px', float:'left'}}></div>
                   <div style={{float:'left'}}>
                     <h1>Be Heard</h1>
                     <p style={{'clear':'both'}}>Press record and tell us what you think</p>
