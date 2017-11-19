@@ -9,11 +9,10 @@ import BH from "../../../service/Issues";
 class IssueList extends React.Component {
 
   handleVoteUp = (issueId) => {
-      if (this.props.auth.loginShowIfNot()) {
-        BH.voteUp(issueId,this.props.auth.currentUser.uid, {uid: this.props.auth.currentUser.uid});
-      }
+    if (this.props.auth.loginShowIfNot()) {
+      BH.voteUp(issueId, this.props.auth.currentUser.uid, {uid: this.props.auth.currentUser.uid});
+    }
   };
-
 
 
   render() {
@@ -22,10 +21,10 @@ class IssueList extends React.Component {
       <div>
 
 
-
-{this.props.issues.length > 0 &&
-        <div> {this.props.issues.map((issue) =>  <IssueListItem key={issue.id} issue={issue} handleVoteUp={this.handleVoteUp}/>) } </div>
-      }
+        {this.props.issues.length > 0 &&
+        <div> {this.props.issues.map((issue) => <IssueListItem key={issue.id} issue={issue}
+                                                               handleVoteUp={this.handleVoteUp}/>)} </div>
+        }
 
 
       </div>

@@ -21,6 +21,7 @@ class CommentCreate extends React.Component {
     if (this.props.auth.loginShowIfNot()) {
       BH.addComment(this.props.issueId, {
         uid: this.props.auth.currentUser.uid,
+        avatar: this.props.auth.currentUser.photoURL,
         ...this.state.comment,
         numVotes: 0
       }).then((ret) => {

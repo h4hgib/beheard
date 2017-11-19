@@ -73,6 +73,18 @@ class IssueCreate extends React.Component {
           onChange={this.handleChange('title')}
           margin="normal"
         />
+        
+        <StyledSpacedText type="headline" component="h2">
+           Background Header URL
+        </StyledSpacedText>
+
+        <TextField
+          id="bgUrl"
+          label="BgUrl"
+          value={this.state.issue.bgUrl}
+          onChange={this.handleChange('bgUrl')}
+          margin="normal"
+        />
 
         <StyledSpacedText type="headline" component="h2">
            Short Description

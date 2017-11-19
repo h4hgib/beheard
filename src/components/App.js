@@ -28,7 +28,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <Route path="/" component={AppShell}/>
-            <Switch>
+            <Switch >
               {/*<Route exact path="/" component={HomePage}/>*/}
               <Route exact path="/" component={LandingPage}/>
               {/*<Route path="/LoggedIn" component={LoggedIn}/>*/}
@@ -43,5 +43,7 @@ class App extends React.Component {
     );
   }
 }
+
+
 
 export default withRoot(App);

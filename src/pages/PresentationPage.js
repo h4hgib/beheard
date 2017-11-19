@@ -9,6 +9,9 @@ import CommentListView from "../components/beheard/presentation/CommentListView"
 import ReactionListView from "../components/beheard/presentation/ReactionListView";
 import ReactionCreate from "../components/beheard/presentation/ReactionCreate";
 import RecordingListView from "../components/beheard/presentation/RecordingListView";
+import HeroSection from "../components/ArticlePage/HeroSection";
+import MainContent from "../components/ArticlePage/MainContent";
+import Paper from 'material-ui/Paper';
 
 
 class PresentationPage extends React.Component {
@@ -51,32 +54,30 @@ class PresentationPage extends React.Component {
 
   render() {
     return (
-      <PresentationPageContainer>
+      <div>
 
         {this.state && this.state.id && (
 
           <div>
-            {/*<PresentationHero />*/}
-            {/*<PresentationSomething />*/}
-            <Typography type="display3" >
-              {this.state.title}
-            </Typography>
-            <Typography type="display2">
+
+            <HeroSection title={this.state.title} bgUrl={this.state.bgUrl}></HeroSection>
+           <Typography type="display2">
               {this.state.desc}
             </Typography>
-            <RawBody content={this.state.content}/>
+            <Paper>
+              <MainContent content={this.state.content}></MainContent>
+            </Paper>
 
-
-            <ReactionListView issueId={this.state.id} />
-            <ReactionCreate issueId={this.state.id} />
-            <br />
-            <br />
-            <RecordingListView issueId={this.state.id} />
+            <ReactionListView issueId={this.state.id}/>
+            <ReactionCreate issueId={this.state.id}/>
+            <br/>
+            <br/>
+            <RecordingListView issueId={this.state.id}/>
             {/*<RecordingCreate issueId={this.state.id} />*/}
-            <br />
-            <br />
-            <CommentListView issueId={this.state.id} />
-            <CommentCreate issueId={this.state.id} />
+            <br/>
+            <br/>
+            <CommentListView issueId={this.state.id}/>
+            <CommentCreate issueId={this.state.id}/>
 
             {/*<iframe src={this.state.questions[0]} width="760" height="500">Loading...</iframe>*/}
           </div>
@@ -85,7 +86,7 @@ class PresentationPage extends React.Component {
 
         <RecordingsSection/>
 
-      </PresentationPageContainer>
+      </div>
     );
   };
 
@@ -94,10 +95,3 @@ class PresentationPage extends React.Component {
 export default PresentationPage;
 
 
-const PresentationPageContainer = styled.div`
-padding-top: 20px;
-    max-width: 500px;
-    margin: auto auto;
-
-
-`;

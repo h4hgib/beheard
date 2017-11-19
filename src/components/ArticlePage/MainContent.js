@@ -8,6 +8,7 @@ import Grid from 'material-ui/Grid';
 import Navbar from '@trendmicro/react-navbar';
 import Radio, { RadioGroup } from 'material-ui/Radio';
 import Recorder from '../Recorder';
+import RawBody from "../RawBody";
 
 class MainContent extends React.Component {
 
@@ -52,19 +53,8 @@ class MainContent extends React.Component {
                   <p>Press record and tell us what you think</p>
                   <Recorder />
                 </div>
-                <h1 style={tagLineFontStyle}>Overview</h1>
-                <p>
-                Ea pri harum deleniti, ne pri labore deserunt. Amet paulo ancillae ea vis, impetus intellegam id duo. Legimus vituperatoribus ex eos, ea est sanctus efficiantur, usu no nisl dolores liberavisse. An vix exerci imperdiet, et cum tation feugiat suscipiantur, eam ei dolores invenire democritum. At ludus admodum antiopam eam, vix verterem iudicabit an. Usu eu veri quas cetero, ex pro modo oratio fabulas. Nemore labitur recusabo cum ei.
-                </p>
-                <p>
-                Ea pri harum deleniti, ne pri labore deserunt. Amet paulo ancillae ea vis, impetus intellegam id duo. Legimus vituperatoribus ex eos, ea est sanctus efficiantur, usu no nisl dolores liberavisse. An vix exerci imperdiet, et cum tation feugiat suscipiantur, eam ei dolores invenire democritum. At ludus admodum antiopam eam, vix verterem iudicabit an. Usu eu veri quas cetero, ex pro modo oratio fabulas. Nemore labitur recusabo cum ei.
-                </p>
-                <p>
-                Ea pri harum deleniti, ne pri labore deserunt. Amet paulo ancillae ea vis, impetus intellegam id duo. Legimus vituperatoribus ex eos, ea est sanctus efficiantur, usu no nisl dolores liberavisse. An vix exerci imperdiet, et cum tation feugiat suscipiantur, eam ei dolores invenire democritum. At ludus admodum antiopam eam, vix verterem iudicabit an. Usu eu veri quas cetero, ex pro modo oratio fabulas. Nemore labitur recusabo cum ei.
-                </p>
-                <p>
-                Ea pri harum deleniti, ne pri labore deserunt. Amet paulo ancillae ea vis, impetus intellegam id duo. Legimus vituperatoribus ex eos, ea est sanctus efficiantur, usu no nisl dolores liberavisse. An vix exerci imperdiet, et cum tation feugiat suscipiantur, eam ei dolores invenire democritum. At ludus admodum antiopam eam, vix verterem iudicabit an. Usu eu veri quas cetero, ex pro modo oratio fabulas. Nemore labitur recusabo cum ei.
-                </p>
+
+                <RawBody content={this.props.content}/>
               </section>
             </div>
            </Grid>

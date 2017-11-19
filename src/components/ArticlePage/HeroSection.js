@@ -50,28 +50,30 @@ class HeroSection extends React.Component {
       position:'absolute',
       background:'rgba(0,0,0,0.7)',
       width:'100%',
-      height:'700px'
+      height:'500px'
     }
     var titleStyle = {
       fontSize:'42px',
-      fontWeight:'500'
+      fontWeight:'500',
+      textAlight:'center'
     }
     var titleContainer={
-      height:'70px',
+      // height:'200px',
       left:0, right:0,
       top:0, bottom:0,
       margin:'auto',
-      position:'absolute',width:'70%'
+      position:'absolute',width:'70%',
+      marginTop: '250px'
     }
 
     return (
       <div style={divStyle}>
         <Grid item xs={12}>
-         <StyledPaper>
+         <StyledPaper bg={this.props.bgUrl}>
            <Grid item xs={6} sm={3}>
                 <div style={overlayStyle}></div>
                 <div style={titleContainer}>
-                <h1 style={titleStyle}>Government unveils plans for schools ‘revolution’</h1></div>
+                <h1 style={titleStyle}>{this.props.title}</h1></div>
            </Grid>
           </StyledPaper>
        </Grid>
@@ -83,8 +85,8 @@ class HeroSection extends React.Component {
 export default HeroSection;
 
 const StyledPaper = styled(Paper)`
-    height:700px;
-    background-image: url("/images/articlebg.png");
+    height:500px;
+    background-image: url("${props => props.bg ? props.bg : ''}");
     background-size: cover;
     background-position:center;
     background-repeat:no-repeat;
