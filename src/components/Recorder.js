@@ -100,20 +100,11 @@ class Recorder extends React.Component {
       float:'left',
       borderRadius:'5px'
     }
-    return (
-      <div>
-        <ReactMic
-          record={this.state.record}
-          className="sound-wave"
-          onStop={this.onStop}
-          audioBitsPerSecond= {128000}
-          strokeColor="#000000"
-          backgroundColor="#fff"
-          style={{borderRadius:'6px'}} />
+    return (<div>
+      <div style={{display:'flex'}}>
 
-        <div>
-          <audio ref="audioSource" controls="controls" src={this.state.blobURL}></audio>
-        </div>
+
+
 
         <div style={buttonDock}>
           <div style={buttonContainerStyle}>
@@ -131,6 +122,27 @@ class Recorder extends React.Component {
           <div style={buttonTextStyle}> Save </div>
           </div>
         </div>
+
+
+        <div>
+                <ReactMic
+          height={50}
+          width={300}
+          record={this.state.record}
+          className="sound-wave"
+          onStop={this.onStop}
+          audioBitsPerSecond= {128000}
+          strokeColor="#000000"
+          backgroundColor="#fff"
+          style={{borderRadius:'6px'}} />
+          <div style={{width:300}}>
+          <audio ref="audioSource" controls="controls" src={this.state.blobURL}></audio>
+        </div>
+
+        </div>
+
+      </div>
+
 
 
       </div>
