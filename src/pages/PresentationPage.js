@@ -4,6 +4,11 @@ import RecordingsSection from "../components/beheard/presentation/RecordingsSect
 import BH from "../service/Issues";
 import RawBody from "../components/RawBody";
 import Typography from 'material-ui/Typography';
+import CommentCreate from "../components/beheard/presentation/CommentCreate";
+import CommentListView from "../components/beheard/presentation/CommentListView";
+import ReactionListView from "../components/beheard/presentation/ReactionListView";
+import ReactionCreate from "../components/beheard/presentation/ReactionCreate";
+import RecordingListView from "../components/beheard/presentation/RecordingListView";
 
 
 class PresentationPage extends React.Component {
@@ -60,6 +65,18 @@ class PresentationPage extends React.Component {
               {this.state.desc}
             </Typography>
             <RawBody content={this.state.content}/>
+
+
+            <ReactionListView issueId={this.state.id} />
+            <ReactionCreate issueId={this.state.id} />
+            <br />
+            <br />
+            <RecordingListView issueId={this.state.id} />
+            {/*<RecordingCreate issueId={this.state.id} />*/}
+            <br />
+            <br />
+            <CommentListView issueId={this.state.id} />
+            <CommentCreate issueId={this.state.id} />
 
             {/*<iframe src={this.state.questions[0]} width="760" height="500">Loading...</iframe>*/}
           </div>

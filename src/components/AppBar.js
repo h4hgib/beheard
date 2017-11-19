@@ -9,7 +9,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 
 import LoginAvatar from "./LoginAvatar";
 import {Link} from "react-router-dom";
-
+import '../app.css';
 const AppBar = function AppBar(props) {
   return (
     <div>

@@ -3,6 +3,11 @@
     border: 1px solid mediumpurple;
 }
 
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
 .button:hover{
   cursor: pointer;
 

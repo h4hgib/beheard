@@ -9,7 +9,9 @@ import BH from "../../../service/Issues";
 class IssueList extends React.Component {
 
   handleVoteUp = (issueId) => {
-      BH.voteUp(issueId,this.props.auth.currentUser.uid, {uid: this.props.auth.currentUser.uid});
+      if (this.props.auth.loginShowIfNot()) {
+        BH.voteUp(issueId,this.props.auth.currentUser.uid, {uid: this.props.auth.currentUser.uid});
+      }
   };
 
 

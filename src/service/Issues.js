@@ -68,12 +68,42 @@ BeHeardService.prototype.voteUp = function(issueID,userId) {
 };
 
 
+BeHeardService.prototype.addComment = function(issueId,comment) {
+  return firebase.firestore().collection('issues').doc(issueId).collection('comments').add(comment);
+};
 
+BeHeardService.prototype.getAllComments = function(issueId,loaded) {
+  const query = firebase.firestore().collection(`issues/${issueId}/comments`);
+   this._getDocumentsInQuery(query, loaded);
+};
+
+
+
+BeHeardService.prototype.addRecording = function(issueId,recording) {
+  return firebase.firestore().collection('issues').doc(issueId).collection('recordings').add(recording);
+};
+
+BeHeardService.prototype.getAllRecordings = function(issueId,loaded) {
+  const query = firebase.firestore().collection(`issues/${issueId}/recordings`);
+   this._getDocumentsInQuery(query, loaded);
+};
+
+
+
+BeHeardService.prototype.addReaction = function(issueId, userId, reaction) {
+  const voteDocRef = firebase.firestore().doc(`issues/${issueId}/reactions/${userId}`);
+  return voteDocRef.set({reaction:reaction});
+};
+
+BeHeardService.prototype.getAllReactions = function(issueId,loaded) {
+  const query = firebase.firestore().collection(`issues/${issueId}/reactions`);
+   this._getDocumentsInQuery(query, loaded);
+};
 
 
 
 BeHeardService.prototype.addReactionVoice = function (issueId, data) {
-  console.log("Adding: ", data)
+  console.log("Adding: ", data);
   const collection = firebase.firestore().collection('issues').doc(issueId).collection('recordings');
   return collection.add(data);
 };
