@@ -100,14 +100,18 @@ class MainContent extends React.Component {
                   {this.state.id && (<div>
                     <ReactionListView issueId={this.state.id}/>
                     <ReactionCreate issueId={this.state.id}/>
+                    {/*<RecordingCreate issueId={this.state.id} />*/}
                     </div>
                   )}
                   </div>
-                  <hr></hr>
-                  <div style={{float:'left'}}>
+                  <div style={{float:'left', borderTop:'1px solid #e5e5e5',marginTop:'15px', paddingTop:'15px', width:'100%'}}>
                     <h1>Be Heard</h1>
                     <p style={{'clear':'both'}}>Press record and tell us what you think</p>
                     <Recorder  issueId={this.state.id}/>
+                    {this.state.id && (<div style={{float:'left', width:'100%'}}>
+                      <RecordingListView issueId={this.state.id}/>
+                      <RecordingsSection issueId={this.state.id}/>
+                    </div>)}
                   </div>
                 </div>
                 <Typography type="subheading" style={contentStyle}>

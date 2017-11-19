@@ -8,7 +8,6 @@ import CommentCreate from "../components/beheard/presentation/CommentCreate";
 import CommentListView from "../components/beheard/presentation/CommentListView";
 import ReactionListView from "../components/beheard/presentation/ReactionListView";
 import ReactionCreate from "../components/beheard/presentation/ReactionCreate";
-import RecordingListView from "../components/beheard/presentation/RecordingListView";
 import HeroSection from "../components/ArticlePage/HeroSection";
 import MainContent from "../components/ArticlePage/MainContent";
 import Paper from 'material-ui/Paper';
@@ -59,29 +58,24 @@ class PresentationPage extends React.Component {
               <MainContent desc={this.state.desc} content={this.state.content} issueId={this.state.id} >
 
                 {this.state.questionsLink && (
-                                  <StyledQContainer>
-
-                <StyledIframe src={this.state.questionsLink} width="650" height="500" >Loading...</StyledIframe>
+                <StyledQContainer>
+                  <StyledIframe src={this.state.questionsLink} width="650" height="500" >Loading...</StyledIframe>
                 </StyledQContainer>
                 )}
 
 
-
-                        {this.state.id && (
+                <StyledPaper>
+                    {this.state.id && (
                           <div>
-
                             <br/>
                             <br/>
-                            <RecordingListView issueId={this.state.id}/>
-                            {/*<RecordingCreate issueId={this.state.id} />*/}
-                            <br/>
-                            <br/>
-                            <CommentListView issueId={this.state.id}/>
                             <CommentCreate issueId={this.state.id}/>
+                            <CommentListView issueId={this.state.id}/>
 
-        <RecordingsSection issueId={this.state.id}/>
-          </div>
-          )}
+                            <RecordingsSection issueId={this.state.id}/>
+                    </div>
+                    )}
+                </StyledPaper>
 
 
 
@@ -114,5 +108,16 @@ const StyledQContainer = styled.div`
       margin: auto auto;
     width: 650px;
     max-width: 650px;
+
+`;
+
+const StyledPaper = styled.div`
+
+margin: auto auto;
+width:750px;
+padding:20px;
+box-shadow:1px 1px 3px 1px rgba(0,0,0,0.1);
+border-radius:8px;
+margin-top:40px;
 
 `;
