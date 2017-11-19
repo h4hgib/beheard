@@ -18,9 +18,7 @@ const AppBar = function AppBar(props) {
         <Toolbar style={{width: '1200px', margin: '0 auto'}}>
 
           <Link to={`/`}>
-            <Typography type="title" color="inherit">
-              Be Heard
-            </Typography>
+            <img style={{height:'48px', marginTop:'2px'}} src="/images/logo.png"/>
           </Link>
           <StyledToolBarRow>
             <StyledRight>
