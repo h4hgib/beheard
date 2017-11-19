@@ -35,8 +35,10 @@ class PageContent extends React.Component {
               <Grid container justify="center" spacing={Number(16)}>
               {[0, 1, 2, 3, 4, 5].map(value => (
                 <Grid xs={4} key={value} item>
+                  <a href="/article1">
                     <Paper style={{background:'#fff', backgroundImage:'url("/images/dummy/00'+value+'.png")',
                      height: 300, backgroundSize:'cover', backgroundPosition:'center',backgroundPositionY:'-40px',backgroundRepeat:'no-repeat', borderRadius:'3px'}}/>
+                  </a>
                 </Grid>
               ))}
               </Grid>
