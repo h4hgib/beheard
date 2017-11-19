@@ -10,6 +10,7 @@ import Radio, { RadioGroup } from 'material-ui/Radio';
 import Recorder from '../Recorder';
 import RawBody from "../RawBody";
 import Skeleton from 'react-loading-skeleton';
+import Typography from "material-ui/Typography";
 
 class MainContent extends React.Component {
 
@@ -49,6 +50,11 @@ class MainContent extends React.Component {
            <Grid item xs={12}>
             <div style={tagLineStyle}>
               <section style={contentStyle}>
+
+                <Typography type="subheading">
+                 {this.props.desc ? this.props.desc : <Skeleton count={3}/>}
+                </Typography>
+
                 <div style={recorderStyle}>
                   <h1>Be Heard</h1>
                   <p>Press record and tell us what you think</p>
@@ -58,6 +64,7 @@ class MainContent extends React.Component {
                 {this.props.content ? <RawBody content={this.props.content}/> : <Skeleton count={10}/>}
               </section>
             </div>
+             {this.props.children}
            </Grid>
         </div>
         <div style={{marginTop:'100px','height':'200px', width:'100%', background:'#eaeaea'}}></div>

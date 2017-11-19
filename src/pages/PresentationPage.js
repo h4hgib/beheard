@@ -14,6 +14,7 @@ import MainContent from "../components/ArticlePage/MainContent";
 import Paper from 'material-ui/Paper';
 
 import Skeleton from 'react-loading-skeleton';
+import InLineQuestionaire from "../components/beheard/InLineQuestionaire";
 class PresentationPage extends React.Component {
 
   state = {};
@@ -57,12 +58,14 @@ class PresentationPage extends React.Component {
       <div>
 
             <HeroSection title={this.state.title} bgUrl={this.state.bgUrl}></HeroSection>
-           <Typography type="display2">
-              {this.state.desc ? this.state.desc : <Skeleton/>}
-            </Typography>
 
             <Paper>
-              <MainContent content={this.state.content}></MainContent>
+              <MainContent desc={this.state.desc} content={this.state.content}>
+
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeV1sawnJyfwZ5Kx_w4duvo0fKm49A0m2kWu9jGgCCrRovSwQ/viewform?embedded=true" width="500" height="250" >Loading...</iframe>
+              </MainContent>
+
+              <InLineQuestionaire />
             </Paper>
 
 
