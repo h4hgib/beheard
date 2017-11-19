@@ -7,6 +7,7 @@ import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import Navbar from '@trendmicro/react-navbar';
 import Radio, { RadioGroup } from 'material-ui/Radio';
+import Recorder from '../Recorder';
 
 class MainContent extends React.Component {
 
@@ -33,6 +34,11 @@ class MainContent extends React.Component {
       fontSize:'20px',
       lineHeight:'26px'
     }
+    var recorderStyle = {
+      padding:'20px',
+      background:'#f9f9f9',
+      borderRadius:'6px'
+    }
 
     return (
       <div>
@@ -40,6 +46,11 @@ class MainContent extends React.Component {
            <Grid item xs={12}>
             <div style={tagLineStyle}>
               <section style={contentStyle}>
+                <div style={recorderStyle}>
+                  <h1>Be Heard</h1>
+                  <p>Press record and tell us what you think</p>
+                  <Recorder />
+                </div>
                 <h1 style={tagLineFontStyle}>Overview</h1>
                 <p>
                 Ea pri harum deleniti, ne pri labore deserunt. Amet paulo ancillae ea vis, impetus intellegam id duo. Legimus vituperatoribus ex eos, ea est sanctus efficiantur, usu no nisl dolores liberavisse. An vix exerci imperdiet, et cum tation feugiat suscipiantur, eam ei dolores invenire democritum. At ludus admodum antiopam eam, vix verterem iudicabit an. Usu eu veri quas cetero, ex pro modo oratio fabulas. Nemore labitur recusabo cum ei.
