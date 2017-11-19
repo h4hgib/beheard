@@ -68,7 +68,7 @@ class MainContent extends React.Component {
       padding:'20px',
       background:'#f9f9f9',
       borderRadius:'6px',
-      height:'574px',
+      float:'left',
       clear:'both',
     }
     var overviewStyle = {

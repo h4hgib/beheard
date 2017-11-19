@@ -71,8 +71,6 @@ class PresentationPage extends React.Component {
                             <br/>
                             <CommentCreate issueId={this.state.id}/>
                             <CommentListView issueId={this.state.id}/>
-
-                            <RecordingsSection issueId={this.state.id}/>
                     </div>
                     )}
                 </StyledPaper>
