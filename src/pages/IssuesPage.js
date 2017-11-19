@@ -24,11 +24,13 @@ class IssuesPage extends React.Component {
     return (
       <IssuePageContainer>
 
+        <div style={{display:'flex',justifyContent: 'center'}}>
         <Link to={"/issue/create"}>
         <Button raised color="primary">
-          Create Issue
+          Create New Issue
         </Button>
         </Link>
+        </div>
 
         <IssueList issues={this.state.issues}/>
 
@@ -43,8 +45,8 @@ export default IssuesPage;
 
 const IssuePageContainer = styled.div`
 
-  max-width: 500px;
-  margin: auto auto;
+  //max-width: 500px;
+  //margin: auto auto;
   
 
 `;

@@ -22,7 +22,7 @@ const LandingPage = function LandingPage(props) {
     <div>
       <HeroSection></HeroSection>
       <Paper>
-        <IssuesPage/>
+
         <MainContent></MainContent>
         <StatsSubPage />
       </Paper>

@@ -13,11 +13,12 @@ import Skeleton from 'react-loading-skeleton';
 
 const styles = {
   card: {
-    maxWidth: 345,
+    maxWidth: 650,
+    width: 650,
     margin: 20,
   },
   media: {
-    height: 50,
+    height: 180,
   },
 };
 
@@ -29,7 +30,7 @@ function IssueListItem(props) {
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image="http://via.placeholder.com/350x50"
+          image={(props.issue) ? props.issue.bgUrl : ''}
           title="Contemplative Reptile"
         />
         <CardContent>
@@ -47,16 +48,21 @@ function IssueListItem(props) {
           { props.issue && (
             <Link to={`/issues/${props.issue.id}`}>
             <Button dense color="primary">
-              Learn More
+              View More
             </Button>
           </Link>
           )}
 
+          <div style={{display: 'flex', flex:1, flexDirection: 'row-reverse'}}>
+              { props.issue && (
+          <Button raised color="primary" onClick={() => props.handleVoteUp(props.issue.id)}> Vote Up </Button>
+      )}
+          </div>
         </CardActions>
       </Card>
-      { props.issue && (
-          <Button raised onClick={() => props.handleVoteUp(props.issue.id)}> Vote Up </Button>
-      )}
+
+
+
 
     </div>
   );

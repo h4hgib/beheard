@@ -7,6 +7,8 @@ import React from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
 import SecondaryMenu from '../SecondaryMenu';
 import PageContent from './PageContent';
+import PageContentDynamic from "./PageContentDynamic";
+import IssuesPage from "../../pages/IssuesPage";
 
 const noop = () => {};
 
@@ -16,7 +18,16 @@ const StickyNavbar = ({ state, actions }) => {
             <Sticky>
               <SecondaryMenu></SecondaryMenu>
             </Sticky>
-            <PageContent sectionName={'Featured Debates'} />
+
+
+          <PageContentDynamic sectionName={'Issues'}>
+              <IssuesPage/>
+          </PageContentDynamic>
+
+
+            {/*<PageContent sectionName={'Featured Debates'} />*/}
+
+
             <div style={{marginTop:'100px'}}>
               <PageContent sectionName={'Traffic and Tourism'} />
             </div>
