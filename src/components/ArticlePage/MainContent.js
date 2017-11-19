@@ -5,10 +5,8 @@ import BH from "../../service/Issues";
 import RawBody from "../RawBody";
 import Typography from 'material-ui/Typography';
 import CommentCreate from "../beheard/presentation/CommentCreate";
-import CommentListView from "../beheard/presentation/CommentListView";
 import ReactionListView from "../beheard/presentation/ReactionListView";
 import ReactionCreate from "../beheard/presentation/ReactionCreate";
-import RecordingListView from "../beheard/presentation/RecordingListView";
 import HeroSection from "./HeroSection";
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
@@ -109,7 +107,6 @@ class MainContent extends React.Component {
                     <p style={{'clear':'both'}}>Press record and tell us what you think</p>
                     <Recorder  issueId={this.state.id}/>
                     {this.state.id && (<div style={{float:'left', width:'100%'}}>
-                      <RecordingListView issueId={this.state.id}/>
                       <RecordingsSection issueId={this.state.id}/>
                     </div>)}
                   </div>

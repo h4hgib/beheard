@@ -26,11 +26,7 @@ class Component extends React.Component {
 
     return (
       <div>
-        {this.state.recordings && this.state.recordings.length > 0 && (
-          this.state.recordings.map((recording) => {
-            return <RecordingListItem key={recording.id} recording={recording}/>;
-          })
-        )}
+
       </div>
     );
   }

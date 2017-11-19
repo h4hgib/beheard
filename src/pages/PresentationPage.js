@@ -6,8 +6,6 @@ import RawBody from "../components/RawBody";
 import Typography from 'material-ui/Typography';
 import CommentCreate from "../components/beheard/presentation/CommentCreate";
 import CommentListView from "../components/beheard/presentation/CommentListView";
-import ReactionListView from "../components/beheard/presentation/ReactionListView";
-import ReactionCreate from "../components/beheard/presentation/ReactionCreate";
 import HeroSection from "../components/ArticlePage/HeroSection";
 import MainContent from "../components/ArticlePage/MainContent";
 import Paper from 'material-ui/Paper';
@@ -70,7 +68,9 @@ class PresentationPage extends React.Component {
                             <br/>
                             <br/>
                             <CommentCreate issueId={this.state.id}/>
-                            <CommentListView issueId={this.state.id}/>
+
+
+
                     </div>
                     )}
                 </StyledPaper>
