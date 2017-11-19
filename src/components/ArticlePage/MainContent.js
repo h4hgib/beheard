@@ -107,7 +107,7 @@ class MainContent extends React.Component {
                   <div style={{float:'left'}}>
                     <h1>Be Heard</h1>
                     <p style={{'clear':'both'}}>Press record and tell us what you think</p>
-                    <Recorder />
+                    <Recorder  issueId={this.state.id}/>
                   </div>
                 </div>
                 <Typography type="subheading" style={contentStyle}>

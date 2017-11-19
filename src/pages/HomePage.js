@@ -52,7 +52,6 @@ const HomePage = function HomePage(props) {
 
          {/*<LoggedIn/>*/}
 
-      <Recorder/>
 
     </div>
   );

@@ -112,7 +112,6 @@ BeHeardService.prototype.getAllRecordings = function(issueId,loaded) {
 };
 
 
-
 BeHeardService.prototype.addReaction = function(issueId, userId, reaction) {
   const voteDocRef = firebase.firestore().doc(`issues/${issueId}/reactions/${userId}`);
   return voteDocRef.set({reaction:reaction});
@@ -125,9 +124,15 @@ BeHeardService.prototype.getAllReactions = function(issueId,loaded) {
 
 
 BeHeardService.prototype.addReactionVoice = function (issueId, userId, data) {
-  console.log("Adding: ", data);
-  const voteDocRef = firebase.firestore().doc(`issues/${issueId}/recordings/${userId}`);
-  return voteDocRef.set(data);
+  console.log("Adding: ", data, issueId);
+  // const collection = firebase.firestore().collection('issues').doc(issueId).collection('recordings');
+  // return collection.add(data);
+
+  return firebase.firestore().collection('issues').doc(issueId).collection('recordings').add(data);
+
+
+  // const voteDocRef = firebase.firestore().doc(`issues/${issueId}/recordings/${userId}`);
+  // return voteDocRef.set(data);
 };
 
 BeHeardService.prototype.getAllVoiceReactions = function (issueId, render) {
