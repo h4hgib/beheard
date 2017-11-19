@@ -5,6 +5,7 @@ import {inject, observer} from 'mobx-react';
 import IssueListItem from "./IssueListItem";
 import BH from "../../../service/Issues";
 
+import Skeleton from 'react-loading-skeleton';
 
 class IssueList extends React.Component {
 
@@ -25,6 +26,14 @@ class IssueList extends React.Component {
         <div> {this.props.issues.map((issue) => <IssueListItem key={issue.id} issue={issue}
                                                                handleVoteUp={this.handleVoteUp}/>)} </div>
         }
+
+         { this.props.issues.length === 0 && (
+           <div>
+           <IssueListItem key={1}/>
+           <IssueListItem key={2}/>
+           <IssueListItem key={3}/>
+           </div>
+         )}
 
 
       </div>

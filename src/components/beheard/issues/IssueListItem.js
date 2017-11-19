@@ -9,6 +9,7 @@ import Typography from 'material-ui/Typography';
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import RawBody from "../../RawBody";
+import Skeleton from 'react-loading-skeleton';
 
 const styles = {
   card: {
@@ -33,24 +34,30 @@ function IssueListItem(props) {
         />
         <CardContent>
           <Typography type="headline" component="h2">
-            {props.issue.title}
+            {props.issue ? props.issue.title : <Skeleton />}
           </Typography>
           {/*<Typography component="p">*/}
-            <RawBody content={props.issue.desc} />
+              {props.issue ? <RawBody content={props.issue.desc}/> : <Skeleton count={3}/>}
           {/*</Typography>*/}
         </CardContent>
         <CardActions>
           <Button dense color="primary">
             Share
           </Button>
-          <Link to={`/issues/${props.issue.id}`}>
+          { props.issue && (
+            <Link to={`/issues/${props.issue.id}`}>
             <Button dense color="primary">
               Learn More
             </Button>
           </Link>
+          )}
+
         </CardActions>
       </Card>
-      <Button raised onClick={() => props.handleVoteUp(props.issue.id)}> Vote Up </Button>
+      { props.issue && (
+          <Button raised onClick={() => props.handleVoteUp(props.issue.id)}> Vote Up </Button>
+      )}
+
     </div>
   );
 }

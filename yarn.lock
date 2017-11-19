@@ -5437,7 +5437,7 @@ querystringify@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-1.0.0.tgz#6286242112c5b712fa654e526652bf6a13ff05cb"
 
-raf@3.4.0, raf@^3.1.0:
+raf@3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
   dependencies:
@@ -5514,15 +5514,6 @@ react-dev-utils@^4.2.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@^15.6.1:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.10"
-
 react-dom@latest:
   version "16.1.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.1.1.tgz#b2e331b6d752faf1a2d31399969399a41d8d45f8"
@@ -5580,20 +5571,16 @@ react-jss@^8.0.0, react-jss@latest:
     prop-types "^15.6.0"
     theming "^1.2.1"
 
+react-loading-skeleton@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/react-loading-skeleton/-/react-loading-skeleton-0.3.2.tgz#8039154c0ebc853977f885e93c949fd139fee56f"
+
 react-mic@^9.0.0:
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/react-mic/-/react-mic-9.0.0.tgz#07044b79c5e2ce021b4fb6c0b42cda274faeb820"
   dependencies:
     prop-types "^15.5.10"
     react-ga "^2.2.0"
-
-react-motion@^0.5.0:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/react-motion/-/react-motion-0.5.2.tgz#0dd3a69e411316567927917c6626551ba0607316"
-  dependencies:
-    performance-now "^0.2.0"
-    prop-types "^15.5.8"
-    raf "^3.1.0"
 
 react-popper@^0.7.4:
   version "0.7.4"
@@ -5602,7 +5589,7 @@ react-popper@^0.7.4:
     popper.js "^1.12.5"
     prop-types "^15.5.10"
 
-react-router-dom@^4.1.1, react-router-dom@^4.2.2:
+react-router-dom@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
   dependencies:
@@ -5612,16 +5599,6 @@ react-router-dom@^4.1.1, react-router-dom@^4.2.2:
     prop-types "^15.5.4"
     react-router "^4.2.0"
     warning "^3.0.0"
-
-react-router-transition@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-router-transition/-/react-router-transition-1.1.2.tgz#46c2c48ff14c88c8a94d5a562d8a58726ebcce7e"
-  dependencies:
-    prop-types "^15.5.10"
-    react "^15.6.1"
-    react-dom "^15.6.1"
-    react-motion "^0.5.0"
-    react-router-dom "^4.1.1"
 
 react-router@^4.2.0:
   version "4.2.0"
@@ -5703,7 +5680,7 @@ react-transition-group@^2.2.1:
     prop-types "^15.5.8"
     warning "^3.0.0"
 
-react@^15, react@^15.6.1:
+react@^15:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
   dependencies:

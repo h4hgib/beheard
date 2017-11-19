@@ -13,7 +13,7 @@ import HeroSection from "../components/ArticlePage/HeroSection";
 import MainContent from "../components/ArticlePage/MainContent";
 import Paper from 'material-ui/Paper';
 
-
+import Skeleton from 'react-loading-skeleton';
 class PresentationPage extends React.Component {
 
   state = {};
@@ -56,14 +56,11 @@ class PresentationPage extends React.Component {
     return (
       <div>
 
-        {this.state && this.state.id && (
-
-          <div>
-
             <HeroSection title={this.state.title} bgUrl={this.state.bgUrl}></HeroSection>
            <Typography type="display2">
-              {this.state.desc}
+              {this.state.desc ? this.state.desc : <Skeleton/>}
             </Typography>
+
             <Paper>
               <MainContent content={this.state.content}></MainContent>
             </Paper>
@@ -80,11 +77,8 @@ class PresentationPage extends React.Component {
             <CommentCreate issueId={this.state.id}/>
 
             {/*<iframe src={this.state.questions[0]} width="760" height="500">Loading...</iframe>*/}
-          </div>
-        )}
 
-
-        <RecordingsSection/>
+            <RecordingsSection/>
 
       </div>
     );

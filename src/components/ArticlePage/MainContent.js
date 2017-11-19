@@ -9,6 +9,7 @@ import Navbar from '@trendmicro/react-navbar';
 import Radio, { RadioGroup } from 'material-ui/Radio';
 import Recorder from '../Recorder';
 import RawBody from "../RawBody";
+import Skeleton from 'react-loading-skeleton';
 
 class MainContent extends React.Component {
 
@@ -44,7 +45,7 @@ class MainContent extends React.Component {
 
     return (
       <div>
-        <div style={{'max-width':'1200px', margin:'0 auto'}}>
+        <div style={{'maxWidth':'1200px', margin:'0 auto'}}>
            <Grid item xs={12}>
             <div style={tagLineStyle}>
               <section style={contentStyle}>
@@ -54,7 +55,7 @@ class MainContent extends React.Component {
                   <Recorder />
                 </div>
 
-                <RawBody content={this.props.content}/>
+                {this.props.content ? <RawBody content={this.props.content}/> : <Skeleton count={10}/>}
               </section>
             </div>
            </Grid>

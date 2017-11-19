@@ -6,6 +6,7 @@ import Button from 'material-ui/Button';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import Navbar from '@trendmicro/react-navbar';
+import Skeleton from 'react-loading-skeleton';
 
 
 class HeroSection extends React.Component {
@@ -73,7 +74,7 @@ class HeroSection extends React.Component {
            <Grid item xs={6} sm={3}>
                 <div style={overlayStyle}></div>
                 <div style={titleContainer}>
-                <h1 style={titleStyle}>{this.props.title}</h1></div>
+                <h1 style={titleStyle}>{this.props.title || <Skeleton />}</h1></div>
            </Grid>
           </StyledPaper>
        </Grid>
