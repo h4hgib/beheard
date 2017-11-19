@@ -45,6 +45,7 @@ class CommentCreate extends React.Component {
     return (
       <StyledContainer>
         <TextField
+        style={{clear:'both', float:'left'}}
           id="title"
           label="Title"
           value={this.state.comment.title}
@@ -52,6 +53,7 @@ class CommentCreate extends React.Component {
           margin="normal"
         />
         <TextField
+          style={{clear:'both', float:'left'}}
           id="comment"
           label="Content"
           value={this.state.comment.content}
@@ -60,8 +62,8 @@ class CommentCreate extends React.Component {
         />
 
 
-        <Button raised color="primary" onClick={this.submit}>
-          Submit Comment
+        <Button style={{float:'left', clear:'both'}} raised color="primary" onClick={this.submit}>
+          Submit Response
         </Button>
 
       </StyledContainer>
@@ -73,5 +75,7 @@ export default inject('auth')(observer(CommentCreate));
 
 
 const StyledContainer = styled.div`
-    border: 4px solid orange;
+    width:100%;
+    float:left;
+    margin-bottom:20px;
 `;

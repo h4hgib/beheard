@@ -65,12 +65,9 @@ class PresentationPage extends React.Component {
                 <StyledPaper>
                     {this.state.id && (
                           <div>
-                            <br/>
-                            <br/>
+                            <h1>Write a response</h1>
                             <CommentCreate issueId={this.state.id}/>
-
-
-
+                            <CommentListView style={{  borderTop:'1px solid #eaeaea'}} issueId={this.state.id}/>
                     </div>
                     )}
                 </StyledPaper>

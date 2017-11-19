@@ -29,11 +29,12 @@ class Component extends React.Component {
         )}  </div>
         <div> {this.props.comment.title} </div>
         <div> {this.props.comment.content} </div>
-
+        <div style={{marginTop:'8px', marginBottom:'10px'}}>
         {this.state.voted ?
           <Button raised disabled> Vote Up </Button>
           : <Button raised onClick={this.handleVoteUp} > Vote Up </Button>
         }
+        </div>
 
       </StyledContainer>
     );
@@ -44,5 +45,5 @@ export default inject('auth')(observer(Component));
 
 
 const StyledContainer = styled.div`
-    border: 1px solid orange;
+  margin-bottom:20px;
 `;
