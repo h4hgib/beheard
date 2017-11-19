@@ -59,12 +59,6 @@ class PresentationPage extends React.Component {
 
             <HeroSection title={this.state.title} bgUrl={this.state.bgUrl}></HeroSection>
 
-         {this.state.id && (<div>
-             <ReactionListView issueId={this.state.id}/>
-            <ReactionCreate issueId={this.state.id}/>
-           </div>
-         )}
-
             <Paper>
               <MainContent desc={this.state.desc} content={this.state.content}>
 
@@ -119,7 +113,7 @@ const StyledIframe = styled.iframe`
    margin: 0;
     padding 0;
   border:none;
-  
+
 `;
 
 
@@ -127,5 +121,5 @@ const StyledQContainer = styled.div`
       margin: auto auto;
     width: 650px;
     max-width: 650px;
- 
+
 `;

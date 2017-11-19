@@ -1,21 +1,47 @@
 import React from 'react';
-import firebase from 'firebase';
 import styled from "styled-components";
-
-import Button from 'material-ui/Button';
+import RecordingsSection from "../beheard/presentation/RecordingsSection";
+import BH from "../../service/Issues";
+import RawBody from "../RawBody";
+import Typography from 'material-ui/Typography';
+import CommentCreate from "../beheard/presentation/CommentCreate";
+import CommentListView from "../beheard/presentation/CommentListView";
+import ReactionListView from "../beheard/presentation/ReactionListView";
+import ReactionCreate from "../beheard/presentation/ReactionCreate";
+import RecordingListView from "../beheard/presentation/RecordingListView";
+import HeroSection from "./HeroSection";
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
-import Navbar from '@trendmicro/react-navbar';
-import Radio, { RadioGroup } from 'material-ui/Radio';
 import Recorder from '../Recorder';
-import RawBody from "../RawBody";
+import {withRouter} from 'react-router-dom';
+
 import Skeleton from 'react-loading-skeleton';
-import Typography from "material-ui/Typography";
+import InLineQuestionaire from "../beheard/InLineQuestionaire";
 
 class MainContent extends React.Component {
 
+  state = {};
+
+
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+
+    BH.getIssue(this.props.match.params.issueId).then((doc) => {
+      const docdata = {...doc.data(), id: doc.id};
+      console.log(docdata);
+
+      this.setState(docdata);
+
+      BH.getAllVoiceReactions(this.state.id, (recordings) => {
+        console.log(recordings);
+        this.setState({"recordings": recordings});
+      })
+
+    });
+
   }
 
   render() {
@@ -62,6 +88,12 @@ class MainContent extends React.Component {
                   </Typography>
                 </div>
 
+                {this.state.id && (<div>
+                    <ReactionListView issueId={this.state.id}/>
+                   <ReactionCreate issueId={this.state.id}/>
+                  </div>
+                )}
+
                 <div style={recorderStyle}>
                   <h1>Be Heard</h1>
                   <p>Press record and tell us what you think</p>
@@ -81,4 +113,4 @@ class MainContent extends React.Component {
   }
 }
 
-export default MainContent;
+export default withRouter(MainContent);

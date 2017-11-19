@@ -14,15 +14,15 @@ a {
 
 p span{
   font-family: "Merriweather", Georgia, Serif!important;
-  width:800px;
-  margin:0 auto;
-  font-weight:400;
-  font-size:18px;
-  line-height:26px;
-  color:#444;
+  width:800px!important;
+  margin:0 auto!important;
+  font-weight:400!important;
+  font-size:18px!important;
+  line-height:26px!important;
+  color:#444!important;
 }
 
 p span strong {
   font-family: "Merriweather", Georgia, Serif!important;
-  color:#444;
+  color:#444!important;
 }
