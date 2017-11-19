@@ -23,6 +23,7 @@ class IssueCreate extends React.Component {
       title: '',
       desc: '',
       content: '',
+      questionsLink: '',
     },
     editor: null,
   };
@@ -95,6 +96,18 @@ class IssueCreate extends React.Component {
           label="Description"
           value={this.state.issue.desc}
           onChange={this.handleChange('desc')}
+          margin="normal"
+        />
+
+        <StyledSpacedText type="headline" component="h2">
+           Optional Questionnaire embed link
+        </StyledSpacedText>
+
+        <TextField
+          id="questionanaire url"
+          label="Questionnaire URL"
+          value={this.state.issue.questionsLink}
+          onChange={this.handleChange('questionsLink')}
           margin="normal"
         />
 

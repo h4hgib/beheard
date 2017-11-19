@@ -59,23 +59,33 @@ class PresentationPage extends React.Component {
 
             <HeroSection title={this.state.title} bgUrl={this.state.bgUrl}></HeroSection>
 
+         {this.state.id && (<div>
+             <ReactionListView issueId={this.state.id}/>
+            <ReactionCreate issueId={this.state.id}/>
+           </div>
+         )}
+
             <Paper>
               <MainContent desc={this.state.desc} content={this.state.content}>
 
-                <iframe src="https://carmelkhalilian.typeform.com/to/jdQFHw" width="500" height="250" >Loading...</iframe>
+                {this.state.questionsLink && (
+                                  <StyledQContainer>
+
+                <StyledIframe src={this.state.questionsLink} width="650" height="300" >Loading...</StyledIframe>
+                </StyledQContainer>
+                )}
+
 
 
 
               </MainContent>
 
-              <InLineQuestionaire />
             </Paper>
 
 
         {this.state.id && (
           <div>
-           <ReactionListView issueId={this.state.id}/>
-            <ReactionCreate issueId={this.state.id}/>
+
             <br/>
             <br/>
             <RecordingListView issueId={this.state.id}/>
@@ -104,3 +114,18 @@ class PresentationPage extends React.Component {
 export default PresentationPage;
 
 
+const StyledIframe = styled.iframe`
+  margin: auto auto;
+   margin: 0;
+    padding 0;
+  border:none;
+  
+`;
+
+
+const StyledQContainer = styled.div`
+      margin: auto auto;
+    width: 650px;
+    max-width: 650px;
+ 
+`;
