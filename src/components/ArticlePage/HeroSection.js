@@ -52,6 +52,17 @@ class HeroSection extends React.Component {
       width:'100%',
       height:'700px'
     }
+    var titleStyle = {
+      fontSize:'42px',
+      fontWeight:'500'
+    }
+    var titleContainer={
+      height:'70px',
+      left:0, right:0,
+      top:0, bottom:0,
+      margin:'auto',
+      position:'absolute',width:'70%'
+    }
 
     return (
       <div style={divStyle}>
@@ -59,6 +70,8 @@ class HeroSection extends React.Component {
          <StyledPaper>
            <Grid item xs={6} sm={3}>
                 <div style={overlayStyle}></div>
+                <div style={titleContainer}>
+                <h1 style={titleStyle}>Government unveils plans for schools ‘revolution’</h1></div>
            </Grid>
           </StyledPaper>
        </Grid>
