@@ -5,7 +5,7 @@ import Typography from 'material-ui/Typography';
 import styled from "styled-components";
 import InLineQuestionaire from "../components/beheard/InLineQuestionaire";
 import HeroSection from "../components/ArticlePage/HeroSection";
-import MainContent from "../components/LandingPage/MainContent";
+import MainContent from "../components/ArticlePage/MainContent";
 import Paper from 'material-ui/Paper';
 
 import {Link} from "react-router-dom";

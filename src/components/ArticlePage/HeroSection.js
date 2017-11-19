@@ -46,18 +46,32 @@ class HeroSection extends React.Component {
       color: 'rgb(20, 44, 93)',
       fontWeight:200, margin:'0px'
     }
+    var overlayStyle = {
+      position:'absolute',
+      background:'rgba(0,0,0,0.7)',
+      width:'100%',
+      height:'700px'
+    }
+    var titleStyle = {
+      fontSize:'42px',
+      fontWeight:'500'
+    }
+    var titleContainer={
+      height:'70px',
+      left:0, right:0,
+      top:0, bottom:0,
+      margin:'auto',
+      position:'absolute',width:'70%'
+    }
 
     return (
       <div style={divStyle}>
         <Grid item xs={12}>
          <StyledPaper>
            <Grid item xs={6} sm={3}>
-                <LogoPaper>
-                  <div style={logoContainer}>
-                    <img style={logoStyles} src="/images/logo.png"/>
-                    <p style={{color:'rgb(20,44,93)', margin:'0px',marginTop:'-5px', fontSize:'13px'}}>Giving everyone a voice</p>
-                  </div>
-                </LogoPaper>
+                <div style={overlayStyle}></div>
+                <div style={titleContainer}>
+                <h1 style={titleStyle}>Government unveils plans for schools ‘revolution’</h1></div>
            </Grid>
           </StyledPaper>
        </Grid>
@@ -71,22 +85,7 @@ export default HeroSection;
 const StyledPaper = styled(Paper)`
     height:700px;
     background-image: url("/images/articlebg.png");
-    background-size: contain;
+    background-size: cover;
     background-position:center;
     background-repeat:no-repeat;
-`;
-
-const LogoPaper = styled(Paper)`
-   width: 200px;
-   height: 115px;
-   background-color: rgba(255,255,255,0.96);
-   border-radius:6px;
-   position:absolute;
-   left:0; right:0;
-   top:0; bottom:0;
-   margin:auto;
-   text-align:center;
-   max-width:100%;
-   max-height:100%;
-   overflow:auto;
 `;
