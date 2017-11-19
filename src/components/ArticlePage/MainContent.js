@@ -27,21 +27,25 @@ class MainContent extends React.Component {
       fontSize:'28px',
       color: 'rgb(20, 44, 93)',
       fontWeight:400, margin:'0px',
-      marginTop:'30px', marginBottom:'25px'
+      marginTop:'30px', marginBottom:'30px'
     }
     var contentStyle = {
       width:'800px',
       margin:'0 auto',
       fontFamily:'Merriweather, serif',
       fontWeight:'400',
-      fontSize:'20px',
-      lineHeight:'26px'
+      fontSize:'18px',
+      lineHeight:'26px',
+      color:'#444'
     }
     var recorderStyle = {
       padding:'20px',
       background:'#f9f9f9',
       borderRadius:'6px',
       height:'360px'
+    }
+    var overviewStyle = {
+      marginBottom:'20px'
     }
 
     return (
@@ -51,17 +55,21 @@ class MainContent extends React.Component {
             <div style={tagLineStyle}>
               <section style={contentStyle}>
 
-                <Typography type="subheading">
-                 {this.props.desc ? this.props.desc : <Skeleton count={3}/>}
-                </Typography>
+                <div style={overviewStyle}>
+                  <h1 style={tagLineFontStyle}>Overview</h1>
+                  <Typography type="subheading" style={contentStyle}>
+                   {this.props.desc ? this.props.desc : <Skeleton count={3}/>}
+                  </Typography>
+                </div>
 
                 <div style={recorderStyle}>
                   <h1>Be Heard</h1>
                   <p>Press record and tell us what you think</p>
                   <Recorder />
                 </div>
-
-                {this.props.content ? <RawBody content={this.props.content}/> : <Skeleton count={10}/>}
+                <Typography type="subheading" style={contentStyle}>
+                  {this.props.content ? <RawBody content={this.props.content}/> : <Skeleton count={10}/>}
+                </Typography>
               </section>
             </div>
              {this.props.children}

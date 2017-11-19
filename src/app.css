@@ -10,5 +10,19 @@ a {
 
 .button:hover{
   cursor: pointer;
+}
 
+p span{
+  font-family: "Merriweather", Georgia, Serif!important;
+  width:800px;
+  margin:0 auto;
+  font-weight:400;
+  font-size:18px;
+  line-height:26px;
+  color:#444;
+}
+
+p span strong {
+  font-family: "Merriweather", Georgia, Serif!important;
+  color:#444;
 }
