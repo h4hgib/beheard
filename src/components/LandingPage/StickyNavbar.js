@@ -25,13 +25,6 @@ const StickyNavbar = ({ state, actions }) => {
           </PageContentDynamic>
 
 
-            {/*<PageContent sectionName={'Featured Debates'} />*/}
-
-
-            <div style={{marginTop:'100px'}}>
-              <PageContent sectionName={'Traffic and Tourism'} />
-            </div>
-
 
         </StickyContainer>
     );
