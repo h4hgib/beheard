@@ -45,10 +45,6 @@ BeHeardService.prototype._getDocumentsInQuery = function (query, render) {
   });
 };
 
-
-
-
-
 function updateVoteCount(issueID) {
   const IssueRef = firebase.firestore().doc(`issues/${issueID}`);
   const votesCollectionRef = firebase.firestore().collection(`issues/${issueID}/votes`);
@@ -67,7 +63,6 @@ BeHeardService.prototype.voteUp = function(issueID,userId) {
   return updateVoteCount(issueID);
 };
 
-
 BeHeardService.prototype.addComment = function(issueId,comment) {
   return firebase.firestore().collection('issues').doc(issueId).collection('comments').add(comment);
 };
@@ -77,8 +72,6 @@ BeHeardService.prototype.getAllComments = function(issueId,loaded) {
     .orderBy('numVotes', 'desc');
    this._getDocumentsInQuery(query, loaded);
 };
-
-
 
 function updateCommentVoteCount(issueID, commentId) {
   const IssueRef = firebase.firestore().doc(`issues/${issueID}/comments/${commentId}`);
@@ -98,10 +91,6 @@ BeHeardService.prototype.voteUpComment = function(issueID,commentID, userId) {
   return updateCommentVoteCount(issueID, commentID);
 };
 
-
-
-
-
 BeHeardService.prototype.addRecording = function(issueId,recording) {
   return firebase.firestore().collection('issues').doc(issueId).collection('recordings').add(recording);
 };
@@ -110,7 +99,6 @@ BeHeardService.prototype.getAllRecordings = function(issueId,loaded) {
   const query = firebase.firestore().collection(`issues/${issueId}/recordings`);
    this._getDocumentsInQuery(query, loaded);
 };
-
 
 BeHeardService.prototype.addReaction = function(issueId, userId, reaction) {
   const voteDocRef = firebase.firestore().doc(`issues/${issueId}/reactions/${userId}`);
@@ -122,17 +110,8 @@ BeHeardService.prototype.getAllReactions = function(issueId,loaded) {
    this._getDocumentsInQuery(query, loaded);
 };
 
-
 BeHeardService.prototype.addReactionVoice = function (issueId, userId, data) {
-  console.log("Adding: ", data, issueId);
-  // const collection = firebase.firestore().collection('issues').doc(issueId).collection('recordings');
-  // return collection.add(data);
-
   return firebase.firestore().collection('issues').doc(issueId).collection('recordings').add(data);
-
-
-  // const voteDocRef = firebase.firestore().doc(`issues/${issueId}/recordings/${userId}`);
-  // return voteDocRef.set(data);
 };
 
 BeHeardService.prototype.getAllVoiceReactions = function (issueId, render) {

@@ -2,11 +2,8 @@ import React from 'react';
 import firebase from 'firebase';
 import {inject, observer} from 'mobx-react';
 import { ReactMic } from 'react-mic';
-import Button from 'material-ui/Button';
 import Icon from 'material-ui/Icon';
 import BH from "../service/Issues";
-
-
 
 class Recorder extends React.Component {
 
@@ -14,44 +11,53 @@ class Recorder extends React.Component {
     super(props);
     this.state = {
       record: false,
-      blobObject: null,
       isRecording: false,
-      blobFile: null,
-      blobURL: null
+      file: null,
+      fileUrl: null
     }
   }
 
   startRecording = () => {
-    this.setState({
-      record: true,
-      isRecording: true
-    });
+    if (!this.state.isRecording) {
+      this.setState({
+        record: true,
+        isRecording: true
+      });
+    }
+
   }
 
   stopRecording = () => {
-    this.setState({
-      record: false,
-      isRecording: false
-    });
+    if (this.state.isRecording) {
+      this.setState({
+        record: false,
+        isRecording: false
+      });
+    }
   }
 
   onStop = (recordedBlob) => {
     recordedBlob.timeStamp = Date.now();
     console.log('recordedBlob is: ', recordedBlob);
     this.setState({
-      blobFile: recordedBlob,
-      blobURL: recordedBlob.blobURL
+      file: recordedBlob,
+      fileUrl: recordedBlob.blobURL
     })
   }
 
   saveRecording = () => {
     const issueId = this.props.issueId;
     const userId = this.props.auth.currentUser.uid;
-    const file = this.state.blobFile;
+    const file = this.state.file;
     const storageRef = firebase.storage().ref(`recordings/${file.timeStamp}`);
-    storageRef.put(file.blob).then(function(snapshot) {
+    storageRef.put(file.blob).then((snapshot) => {
       const url = {url: snapshot.task.metadata_.downloadURLs[0]};
       BH.addReactionVoice(issueId, userId, url)
+      this.setState({
+        file: null,
+        fileUrl: null        
+      })
+      //document.querySelector('.recorder').clearRect(0, 0, 300, 50);
     });
   }
 
@@ -99,56 +105,54 @@ class Recorder extends React.Component {
       position:'relative',
       float:'left',
       borderRadius:'5px'
+    }    
+    var playerContainerStyle = {
+      'padding-left':'30px',
+      position:'relative',
+      float:'left',
     }
-    return (<div>
+ 
+    return (
+    <div>
       <div style={{display:'flex'}}>
-
-
-
 
         <div style={buttonDock}>
           <div style={buttonContainerStyle}>
-          <div style={iconContainerStyle}><Icon className = 'button' onClick={this.startRecording} style={recordButton}>mic</Icon></div>
-          <div style={buttonTextStyle}> Record </div>
+            <div style={iconContainerStyle}><Icon className = 'button' onClick={this.startRecording} style={recordButton}>mic</Icon></div>
+            <div style={buttonTextStyle}> Record </div>
           </div>
 
           <div style={buttonContainerStyle}>
-          <div style={iconContainerStyle}><Icon className = 'button' onClick={this.stopRecording} style={stopButton}>stop</Icon></div>
-          <div style={buttonTextStyle}>Stop</div>
+            <div style={iconContainerStyle}><Icon className = 'button' onClick={this.stopRecording} style={stopButton}>stop</Icon></div>
+            <div style={buttonTextStyle}>Stop</div>
           </div>
 
+          { this.state.fileUrl &&
           <div style={buttonContainerStyle}>
-          <div style={iconContainerStyle}><Icon className = 'button' onClick={this.saveRecording} style={saveButton}>save</Icon></div>
-          <div style={buttonTextStyle}> Save </div>
-          </div>
+            <div style={iconContainerStyle}><Icon className = 'button' onClick={this.saveRecording} style={saveButton}>save</Icon></div>
+            <div style={buttonTextStyle}> Save </div>
+          </div>}
         </div>
 
-
-        <div>
-                <ReactMic
-          height={50}
-          width={300}
-          record={this.state.record}
-          className="sound-wave"
-          onStop={this.onStop}
-          audioBitsPerSecond= {128000}
-          strokeColor="#000000"
-          backgroundColor="#fff"
-          style={{borderRadius:'6px'}} />
-          <div style={{width:300}}>
-          <audio ref="audioSource" controls="controls" src={this.state.blobURL}></audio>
-        </div>
-
+        <div style={playerContainerStyle}>
+            <ReactMic
+              height={50}
+              width={300}
+              record={this.state.record}
+              className="sound-wave recorder"
+              onStop={this.onStop}
+              audioBitsPerSecond= {128000}
+              strokeColor="#000000"
+              backgroundColor="#fff"
+              style={{borderRadius:'6px'}} />
+            <div style={{width:300}}></div>
+            <audio ref="audioSource" controls="controls" src={this.state.fileUrl}></audio>
         </div>
 
       </div>
-
-
-
-      </div>
+    </div>
     )
   }
 }
 
 export default inject('auth')(observer(Recorder));
-
