@@ -4,6 +4,8 @@ import {inject, observer} from 'mobx-react';
 import { ReactMic } from 'react-mic';
 import Icon from 'material-ui/Icon';
 import BH from "../service/Issues";
+import styled from 'styled-components';
+
 
 class Recorder extends React.Component {
 
@@ -106,53 +108,56 @@ class Recorder extends React.Component {
       float:'left',
       borderRadius:'5px'
     }    
-    var playerContainerStyle = {
-      'padding-left':'30px',
-      position:'relative',
-      float:'left',
-    }
  
     return (
-    <div>
-      <div style={{display:'flex'}}>
+      <div>
+        <div style={{display:'flex'}}>
 
-        <div style={buttonDock}>
-          <div style={buttonContainerStyle}>
-            <div style={iconContainerStyle}><Icon className = 'button' onClick={this.startRecording} style={recordButton}>mic</Icon></div>
-            <div style={buttonTextStyle}> Record </div>
+          <div style={buttonDock}>
+            <div style={buttonContainerStyle}>
+              <div style={iconContainerStyle}><Icon className = 'button' onClick={this.startRecording} style={recordButton}>mic</Icon></div>
+              <div style={buttonTextStyle}> Record </div>
+            </div>
+
+            <div style={buttonContainerStyle}>
+              <div style={iconContainerStyle}><Icon className = 'button' onClick={this.stopRecording} style={stopButton}>stop</Icon></div>
+              <div style={buttonTextStyle}>Stop</div>
+            </div>
+
+            { this.state.fileUrl &&
+              <div style={buttonContainerStyle}>
+                <div style={iconContainerStyle}><Icon className = 'button' onClick={this.saveRecording} style={saveButton}>save</Icon></div>
+                <div style={buttonTextStyle}> Save </div>
+              </div> 
+            }
           </div>
 
-          <div style={buttonContainerStyle}>
-            <div style={iconContainerStyle}><Icon className = 'button' onClick={this.stopRecording} style={stopButton}>stop</Icon></div>
-            <div style={buttonTextStyle}>Stop</div>
-          </div>
+          <StyledPlayerContainer>
+              <ReactMic
+                height={50}
+                width={300}
+                record={this.state.record}
+                className="sound-wave recorder"
+                onStop={this.onStop}
+                audioBitsPerSecond= {128000}
+                strokeColor="#000000"
+                backgroundColor="#fff"
+                style={{borderRadius:'6px'}} />
+              <div style={{width:300}}></div>
+              <audio ref="audioSource" controls="controls" src={this.state.fileUrl}></audio>
+          </StyledPlayerContainer>
 
-          { this.state.fileUrl &&
-          <div style={buttonContainerStyle}>
-            <div style={iconContainerStyle}><Icon className = 'button' onClick={this.saveRecording} style={saveButton}>save</Icon></div>
-            <div style={buttonTextStyle}> Save </div>
-          </div>}
         </div>
-
-        <div style={playerContainerStyle}>
-            <ReactMic
-              height={50}
-              width={300}
-              record={this.state.record}
-              className="sound-wave recorder"
-              onStop={this.onStop}
-              audioBitsPerSecond= {128000}
-              strokeColor="#000000"
-              backgroundColor="#fff"
-              style={{borderRadius:'6px'}} />
-            <div style={{width:300}}></div>
-            <audio ref="audioSource" controls="controls" src={this.state.fileUrl}></audio>
-        </div>
-
       </div>
-    </div>
     )
   }
 }
 
 export default inject('auth')(observer(Recorder));
+
+const StyledPlayerContainer = styled.div`
+
+  padding-left: 30px;
+  position: relative;
+  float: left;
+`;
