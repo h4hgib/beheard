@@ -64,14 +64,14 @@ class Recorder extends React.Component {
   }
 
   render() {
-    var recordButton = {
+    var activeButton = {
       fontSize: 40,
       color:'#fff',
       background:'#42b0f4',
       borderRadius:'50%',
       padding:'5px'
     }
-    var stopButton = {
+    var normalButton = {
       fontSize: 40,
       color:'#fff',
       background:'#5b5a5a',
@@ -79,7 +79,7 @@ class Recorder extends React.Component {
       padding:'5px',
       cursor: 'pointer',
     }
-    var saveButton = {
+    var normalButton = {
       fontSize: 40,
       color:'#fff',
       background:'#5b5a5a',
@@ -87,50 +87,31 @@ class Recorder extends React.Component {
       padding:'5px',
       cursor: 'pointer',
     }
-    var iconContainerStyle = {
-      margin:'0 auto',
-      width:'50%'
-    }
-    var buttonContainerStyle = {
-      width:'100px',
-      textAlign:'center',
-      float:'left',
-      marginLeft:'-20px'
-    }
-    var buttonTextStyle = {
-      clear:'both', margin:'0 auto',
-      fontSize:'16px'
-    }
-    var buttonDock = {
-      background:'#f2f2f2',
-      padding:'15px',
-      position:'relative',
-      float:'left',
-      borderRadius:'5px'
-    }    
- 
+
+
+
     return (
       <div>
         <div style={{display:'flex'}}>
 
-          <div style={buttonDock}>
-            <div style={buttonContainerStyle}>
-              <div style={iconContainerStyle}><Icon className = 'button' onClick={this.startRecording} style={recordButton}>mic</Icon></div>
-              <div style={buttonTextStyle}> Record </div>
-            </div>
+          <StyledButtonDock>
+            <StyledButtonContainer>
+              <StyledIconContainer><Icon className = 'button' onClick={this.startRecording} style={activeButton}>mic</Icon></StyledIconContainer>
+              <StyledButtonText> Record </StyledButtonText>
+            </StyledButtonContainer>
 
-            <div style={buttonContainerStyle}>
-              <div style={iconContainerStyle}><Icon className = 'button' onClick={this.stopRecording} style={stopButton}>stop</Icon></div>
-              <div style={buttonTextStyle}>Stop</div>
-            </div>
+            <StyledButtonContainer>
+              <StyledIconContainer><Icon className = 'button' onClick={this.stopRecording} style={normalButton}>stop</Icon></StyledIconContainer>
+              <StyledButtonText>Stop</StyledButtonText>
+            </StyledButtonContainer>
 
             { this.state.fileUrl &&
-              <div style={buttonContainerStyle}>
-                <div style={iconContainerStyle}><Icon className = 'button' onClick={this.saveRecording} style={saveButton}>save</Icon></div>
-                <div style={buttonTextStyle}> Save </div>
-              </div> 
+              <StyledButtonContainer>
+                <StyledIconContainer><Icon className = 'button' onClick={this.saveRecording} style={normalButton}>save</Icon></StyledIconContainer>
+                <StyledButtonText> Save </StyledButtonText>
+              </StyledButtonContainer> 
             }
-          </div>
+          </StyledButtonDock>
 
           <StyledPlayerContainer>
               <ReactMic
@@ -155,9 +136,36 @@ class Recorder extends React.Component {
 
 export default inject('auth')(observer(Recorder));
 
-const StyledPlayerContainer = styled.div`
-
-  padding-left: 30px;
-  position: relative;
-  float: left;
+const StyledButtonText = styled.div`
+      clear: both;
+      margin: 0 auto;
+      font-size: 16px;
 `;
+
+const StyledIconContainer = styled.div`
+      margin: 0 auto;
+      width: 50%;
+`;
+
+const StyledButtonContainer = styled.div`
+      width: 100px;
+      text-align: center;
+      float: left;
+      marginLeft: -20px;
+`;
+
+const StyledButtonDock = styled.div`
+      background: #f2f2f2;
+      padding: 15px;
+      position: relative;
+      float: left;
+      border-radius: 5px;
+`;   
+ 
+
+const StyledPlayerContainer = styled.div`
+      padding-left: 30px;
+      position: relative;
+      float: left;
+`;
+
