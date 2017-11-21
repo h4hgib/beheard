@@ -59,82 +59,78 @@ class Recorder extends React.Component {
         file: null,
         fileUrl: null        
       })
-      //document.querySelector('.recorder').clearRect(0, 0, 300, 50);
     });
   }
 
   render() {
-    var activeButton = {
-      fontSize: 40,
-      color:'#fff',
-      background:'#42b0f4',
-      borderRadius:'50%',
-      padding:'5px'
-    }
-    var normalButton = {
-      fontSize: 40,
-      color:'#fff',
-      background:'#5b5a5a',
-      borderRadius:'50%',
-      padding:'5px',
-      cursor: 'pointer',
-    }
-    var normalButton = {
-      fontSize: 40,
-      color:'#fff',
-      background:'#5b5a5a',
-      borderRadius:'50%',
-      padding:'5px',
-      cursor: 'pointer',
-    }
 
-
+    const recorderConfig = {
+          height: 50,
+          width: 300,
+          record: this.state.record,
+          className: 'sound-wave recorder',
+          onStop: this.onStop,
+          audioBitsPerSecond:  128000,
+          strokeColor: '#000000',
+          backgroundColor: '#fff',
+          style: {
+            borderRadius:'6px'
+          }
+    }
 
     return (
       <div>
-        <div style={{display:'flex'}}>
+        <StyledRecorderContainer>
 
           <StyledButtonDock>
             <StyledButtonContainer>
-              <StyledIconContainer><Icon className = 'button' onClick={this.startRecording} style={activeButton}>mic</Icon></StyledIconContainer>
+              <StyledIconContainer><StyledIconActive className = 'button' onClick={this.startRecording}>mic</StyledIconActive></StyledIconContainer>
               <StyledButtonText> Record </StyledButtonText>
             </StyledButtonContainer>
 
             <StyledButtonContainer>
-              <StyledIconContainer><Icon className = 'button' onClick={this.stopRecording} style={normalButton}>stop</Icon></StyledIconContainer>
+              <StyledIconContainer><StyledIcon className = 'button' onClick={this.stopRecording}>stop</StyledIcon></StyledIconContainer>
               <StyledButtonText>Stop</StyledButtonText>
             </StyledButtonContainer>
 
-            { this.state.fileUrl &&
+            {this.state.fileUrl &&
               <StyledButtonContainer>
-                <StyledIconContainer><Icon className = 'button' onClick={this.saveRecording} style={normalButton}>save</Icon></StyledIconContainer>
+                <StyledIconContainer><StyledIcon className = 'button' onClick={this.saveRecording}>save</StyledIcon></StyledIconContainer>
                 <StyledButtonText> Save </StyledButtonText>
               </StyledButtonContainer> 
             }
           </StyledButtonDock>
 
           <StyledPlayerContainer>
-              <ReactMic
-                height={50}
-                width={300}
-                record={this.state.record}
-                className="sound-wave recorder"
-                onStop={this.onStop}
-                audioBitsPerSecond= {128000}
-                strokeColor="#000000"
-                backgroundColor="#fff"
-                style={{borderRadius:'6px'}} />
+              <ReactMic {...recorderConfig}
+                 />
               <div style={{width:300}}></div>
               <audio ref="audioSource" controls="controls" src={this.state.fileUrl}></audio>
           </StyledPlayerContainer>
 
-        </div>
+        </StyledRecorderContainer>
       </div>
     )
   }
 }
 
 export default inject('auth')(observer(Recorder));
+
+const StyledRecorderContainer = styled.div`
+      display: flex;
+`;
+
+const StyledIcon = styled(Icon)`
+      font-size: 40;
+      color: #fff;
+      background: #5b5a5a;
+      border-radius: 50%;
+      padding: 5px;
+`;
+
+const StyledIconActive = StyledIcon.extend`
+      background: #42b0f4;
+`;
 
 const StyledButtonText = styled.div`
       clear: both;
@@ -162,7 +158,6 @@ const StyledButtonDock = styled.div`
       border-radius: 5px;
 `;   
  
-
 const StyledPlayerContainer = styled.div`
       padding-left: 30px;
       position: relative;
