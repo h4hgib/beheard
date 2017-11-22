@@ -47,7 +47,10 @@ const LoginAvatar = class LoginAvatar extends React.Component {
         {(this.props.auth.currentUser) && (this.renderUserAvatar() )}
 
         {(!this.props.auth.currentUser) && (
-          <Button onClick={() => this.props.auth.loginShow()}> Sign In </Button>
+          <Button raised color={this.props.color? this.props.color : 'accent'}
+            onClick={() => this.props.auth.loginShow()}>
+            {this.props.loginText? this.props.loginText : 'Sign Up'}
+          </Button>
         )}
 
       </StyledLoginContainer>

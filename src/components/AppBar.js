@@ -22,7 +22,7 @@ const AppBar = function AppBar(props) {
           </Link>
           <StyledToolBarRow>
             <StyledRight>
-              <LoginAvatar/>
+              <LoginAvatar color='primary' loginText="Sign Up"/>
             </StyledRight>
           </StyledToolBarRow>
 

@@ -7,6 +7,7 @@ import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import Navbar from '@trendmicro/react-navbar';
 import StickyNavbar from './StickyNavbar';
+import LoginAvatar from "../LoginAvatar";
 
 
 class HeroSection extends React.Component {
@@ -68,7 +69,7 @@ class HeroSection extends React.Component {
                     <img style={logoStyles} src="/images/logo.png"/>
                       <h2 style={{color:'rgb(20,44,93)', margin:'3px',marginTop:'-5px', fontSize:'28px', fontWeight:400}}>The #1 platform in Gibraltar for social understanding</h2>
                         <div style={{marginTop:'15px'}}>
-                          <Button raised color="primary">Get early access</Button>
+                          <StyledLoginAvatar loginText="Get Early Access" color="primary"/>
                           <StyledButton raised color="contrast">Learn more</StyledButton>
                         </div>
                   </div>
@@ -95,4 +96,8 @@ const StyledButton = styled(Button)`
   margin-left:5px;
   color: rgb(44,152,240);
   background-color:#f9f9f9;
+`;
+
+const StyledLoginAvatar = styled(LoginAvatar)`
+  display:inline;
 `;
