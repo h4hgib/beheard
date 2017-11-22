@@ -44,9 +44,6 @@ class MainContent extends React.Component {
             <StatsSubPage />
         </div>
 
-
-
-
         <div style={{marginTop:'100px','height':'200px', width:'100%', background:'#eaeaea'}}></div>
       </div>
     )
