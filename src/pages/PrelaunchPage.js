@@ -32,7 +32,8 @@ const PrelaunchPage = function PrelaunchPage(props) {
   }
 
   var headerPanelStyle = {
-    padding:'25px'
+    padding:'25px',
+    textAlign:'left'
   }
 
   var flexContainerStyle = {
@@ -86,6 +87,7 @@ const PrelaunchPage = function PrelaunchPage(props) {
                 <Grid xs={6} item>
                   <div style={headerPanelStyle}>
                     <h1 style={titleFontStyle}>Turn opinion into action</h1>
+                      <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum </p>
                   </div>
                 </Grid>
                 <Grid xs={6} item>
@@ -103,12 +105,14 @@ const PrelaunchPage = function PrelaunchPage(props) {
                 <Grid xs={6} item>
                   <div style={headerPanelStyle}>
                     <h1 style={titleFontStyle}>See live data</h1>
+                      <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum </p>
                   </div>
                 </Grid>
 
                 <Grid xs={6} item>
                   <div style={headerPanelStyle}>
                     <h1 style={titleFontStyle}>Vote on what matters to you</h1>
+                      <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum </p>
                   </div>
                 </Grid>
                 <Grid xs={6} item>
