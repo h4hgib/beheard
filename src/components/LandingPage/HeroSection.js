@@ -18,28 +18,38 @@ class HeroSection extends React.Component {
 
   render() {
     var divStyle = {
-      color: 'white',
       backgroundImage: 'url()',
       WebkitTransition: 'all', // note the capital 'W' here
       msTransition: 'all' // 'ms' is the only lowercase vendor prefix
     };
-
+    var logoBox = {
+       width: '380px',
+       borderRadius:'6px',
+       position:'absolute',
+       left:0, right:0,
+       top:'0', bottom:0,
+       margin:'auto',
+       textAlign:'center',
+       maxWidth:'100%',
+       maxHeight:'100%',
+       overflow:'auto'
+    }
     var logoContainer={
       height:'70px',
       left:0, right:0,
-      top:0, bottom:0,
+      top:'-2vh', bottom:0,
       margin:'auto',
       position:'absolute',
     }
     var logoStyles = {
-      height:'70px',
-      marginTop:'-7px'
+      height:'55px',
+      marginTop:'-10px'
     }
     var tagLineContainer = {
       marginTop:'20px'
     }
     var tagLineStyle = {
-      background:'#fff', width:'100%',
+       width:'100%',
       padding:'15px', textAlign:'center'
     }
     var tagLineFontStyle = {
@@ -53,12 +63,16 @@ class HeroSection extends React.Component {
         <Grid item xs={12}>
          <StyledPaper>
            <Grid item xs={6} sm={3}>
-                <LogoPaper>
+             <div style={logoBox}>
                   <div style={logoContainer}>
                     <img style={logoStyles} src="/images/logo.png"/>
-                    <p style={{color:'rgb(20,44,93)', margin:'0px',marginTop:'-5px', fontSize:'13px'}}>Giving everyone a voice</p>
+                      <h2 style={{color:'rgb(20,44,93)', margin:'3px',marginTop:'-5px', fontSize:'28px', fontWeight:400}}>The #1 platform in Gibraltar for social understanding</h2>
+                        <div style={{marginTop:'15px'}}>
+                          <Button raised color="primary">Get early access</Button>
+                          <StyledButton raised color="contrast">Learn more</StyledButton>
+                        </div>
                   </div>
-                </LogoPaper>
+              </div>
            </Grid>
           </StyledPaper>
        </Grid>
@@ -70,24 +84,15 @@ class HeroSection extends React.Component {
 export default HeroSection;
 
 const StyledPaper = styled(Paper)`
-    height:700px;
-    background-image: url("/images/bg.png");
+    height:85vh;
+    background-image: url("/images/bgsvg.svg");
     background-size: contain;
     background-position:center;
     background-repeat:no-repeat;
 `;
 
-const LogoPaper = styled(Paper)`
-   width: 200px;
-   height: 115px;
-   background-color: rgba(255,255,255,0.96);
-   border-radius:6px;
-   position:absolute;
-   left:0; right:0;
-   top:0; bottom:0;
-   margin:auto;
-   text-align:center;
-   max-width:100%;
-   max-height:100%;
-   overflow:auto;
+const StyledButton = styled(Button)`
+  margin-left:5px;
+  color: rgb(44,152,240);
+  background-color:#f9f9f9;
 `;

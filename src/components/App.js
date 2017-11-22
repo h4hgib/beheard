@@ -13,6 +13,7 @@ import LoggedIn from "../pages/LoggedIn";
 import PresentationPage from "../pages/PresentationPage";
 import CreateIssuePage from "../pages/CreateIssuePage";
 import ArticlePage from "../pages/ArticlePage";
+import PrelaunchPage from "../pages/PrelaunchPage"
 
 class App extends React.Component {
 
@@ -30,7 +31,8 @@ class App extends React.Component {
             <Route path="/" component={AppShell}/>
             <Switch >
               {/*<Route exact path="/" component={HomePage}/>*/}
-              <Route exact path="/" component={LandingPage}/>
+              {/*<Route exact path="/" component={LandingPage}/>*/}
+              <Route exact path="/" component={PrelaunchPage}/>
               {/*<Route path="/LoggedIn" component={LoggedIn}/>*/}
               <Route exact path="/issues" component={IssuesPage}/>
               <Route exact path="/issue/create" component={CreateIssuePage}/>
