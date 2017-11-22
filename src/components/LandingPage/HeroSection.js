@@ -38,7 +38,7 @@ class HeroSection extends React.Component {
     var logoContainer={
       height:'70px',
       left:0, right:0,
-      top:'-2vh', bottom:0,
+      top:'3vh', bottom:0,
       margin:'auto',
       position:'absolute',
     }
@@ -85,7 +85,7 @@ class HeroSection extends React.Component {
 export default HeroSection;
 
 const StyledPaper = styled(Paper)`
-    height:85vh;
+    height:90vh;
     background-image: url("/images/bgsvg.svg");
     background-size: contain;
     background-position:center;
