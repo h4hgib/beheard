@@ -11,7 +11,7 @@ const PrelaunchPage = function PrelaunchPage(props) {
   }
   var tagLineFontStyle = {
     fontSize:'32px',
-    marginTop:30,
+    marginTop:60,
     color: 'rgb(20, 44, 93)',
     fontWeight:200, margin:'0px',
     marginBottom:'25px'
@@ -92,13 +92,14 @@ const PrelaunchPage = function PrelaunchPage(props) {
                 </Grid>
                 <Grid xs={6} item>
                   <StyledPaper className='item'>
+                    <img style={{width:'100%'}} src="/images/dummy/dummy-topics.png"/>
                   </StyledPaper>
                 </Grid>
 
                 <Grid xs={6} item>
                   <div className='item'>
                     <StyledPaper className='item'>
-
+                      <img style={{width:'100%'}} src="/images/dummy/dummy-data.png"/>
                     </StyledPaper>
                   </div>
                 </Grid>
@@ -117,6 +118,7 @@ const PrelaunchPage = function PrelaunchPage(props) {
                 </Grid>
                 <Grid xs={6} item>
                   <StyledPaper className='item'>
+                    <img style={{width:'100%'}} src="/images/dummy/dummy-screen.png"/>
                   </StyledPaper>
                 </Grid>
 
