@@ -13,22 +13,30 @@ const PrelaunchPage = function PrelaunchPage(props) {
     fontSize:'32px',
     color: 'rgb(20, 44, 93)',
     fontWeight:200, margin:'0px',
-    marginTop:'30px', marginBottom:'25px'
+    marginBottom:'25px'
   }
+
+  var subTitleFontStyle = {
+    fontSize:'22px',
+    color: 'rgb(20, 44, 93)',
+    fontWeight:200, margin:'0px',
+  }
+
   var flexContainerStyle = {
     display:'flex',
     flexDirection:'row',
     flexWrap:'wrap',
     justifyContent:'flex-start',
-    alignItems:'flex-start'
+    alignItems:'flex-start',
+    marginTop:'30px'
   }
 
   return (
     <div>
       <HeroSection></HeroSection>
 
-      <Grid item xs={12}>
-        <div style={{'maxWidth':'1200px', margin:'0 auto'}}>
+      <Grid item xs={12} style={{background:'#fff'}}>
+        <div style={{'maxWidth':'1200px', margin:'1px auto'}}>
           <div style={tagLineStyle}>
             <span id="learnmore"/>
             <h1 style={tagLineFontStyle}>Why Be Heard?</h1>
@@ -41,7 +49,7 @@ const PrelaunchPage = function PrelaunchPage(props) {
                 <Grid xs={4} item>
                   <div className='item'>
                     <img style={{height:'150px'}} src="/images/dummy/placeholder1.png"/>
-                    <h1>100 Signups in 1 day</h1>
+                    <h1 style={subTitleFontStyle}>100 Signups in 1 day</h1>
                     <p>Join us on Facebook</p>
                   </div>
                 </Grid>
@@ -49,22 +57,22 @@ const PrelaunchPage = function PrelaunchPage(props) {
                 <Grid xs={4} item>
                   <div className='item'>
                     <img style={{height:'150px'}} src="/images/dummy/placeholder1.png"/>
-                      <h1>Turn ideas into action</h1>
-                      <p>Working between the government and the people to facilitate real outcomes from online discussions and opinions.</p>
+                      <h1 style={subTitleFontStyle}>Turn ideas into action</h1>
+                      <p>Working between the government and the people to facilitate real outcomes from online discussions.</p>
                   </div>
                 </Grid>
 
                 <Grid xs={4} item>
                   <div className='item'>
                     <img style={{height:'150px'}} src="/images/dummy/placeholder1.png"/>
-                      <h1>Everybody welcome</h1>
+                      <h1 style={subTitleFontStyle}>Everybody welcome</h1>
                       <p>Associated with Understanding Gibraltar - all backgrounds and religions opinions count</p>
                   </div>
                 </Grid>
 
                 <Grid xs={6} item>
                   <div className='item'>
-                    <h1>Vote on what matters to you</h1>
+                    <h1 style={tagLineFontStyle}>Turn opinion into action</h1>
                   </div>
                 </Grid>
                 <Grid xs={6} item>
@@ -82,13 +90,13 @@ const PrelaunchPage = function PrelaunchPage(props) {
                 </Grid>
                 <Grid xs={6} item>
                   <div className='item'>
-                    <h1>Understand opinions through data</h1>
+                    <h1 style={tagLineFontStyle}>See live data</h1>
                   </div>
                 </Grid>
 
                 <Grid xs={6} item>
                   <div className='item'>
-                    <h1>Vote on what matters to you</h1>
+                    <h1 style={tagLineFontStyle}>Vote on what matters to you</h1>
                   </div>
                 </Grid>
                 <Grid xs={6} item>
