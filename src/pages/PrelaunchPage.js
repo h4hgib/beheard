@@ -23,6 +23,7 @@ const PrelaunchPage = function PrelaunchPage(props) {
              <Grid item xs={12}>
                <div style={{'maxWidth':'1200px', margin:'0 auto'}}>
                 <div style={tagLineStyle}>
+                  <span id="learnmore"/>
                   <h1 style={tagLineFontStyle}>Why Be Heard?</h1>
                 </div>
               </div>

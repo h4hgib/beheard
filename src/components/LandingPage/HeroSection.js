@@ -79,7 +79,7 @@ class HeroSection extends React.Component {
                         <h2 style={{color:'rgb(20,44,93)', margin:'3px',marginTop:'-5px', fontSize:'28px', fontWeight:400}}>The #1 platform in Gibraltar for social understanding</h2>
                           <div style={{marginTop:'15px'}}>
                             <StyledLoginAvatar loginText="Get Early Access" color="primary"/>
-                            <StyledButton raised color="contrast">Learn more</StyledButton>
+                            <a href="#learnmore"><StyledButton raised color="contrast">Learn more</StyledButton></a>
                           </div>
                     </div>
                 </div>
