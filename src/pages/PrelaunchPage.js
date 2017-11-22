@@ -26,41 +26,82 @@ const PrelaunchPage = function PrelaunchPage(props) {
   return (
     <div>
       <HeroSection></HeroSection>
-      <Paper style={{marginTop:'1px', background:'#f6f6f6'}}>
-             <Grid item xs={12}>
-               <div style={{'maxWidth':'1200px', margin:'0 auto'}}>
-                <div style={tagLineStyle}>
-                  <span id="learnmore"/>
-                  <h1 style={tagLineFontStyle}>Why Be Heard?</h1>
-                  <Grid item xs={6} style={{textAlign:'center', margin:'0 auto'}}>
-                    <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum </p>
-                  </Grid>
-                    <Grid item xs={12} style={flexContainerStyle}>
-                        <Grid xs={4} item>
-                          <Paper className='item'>
-                             Hola
-                          </Paper>
-                        </Grid>
-                        <Grid xs={6} item>
-                          <Paper className='item'>
-                            que
-                          </Paper>
-                      </Grid>
-                      <Grid container justify="center" spacing={Number(16)}>
-                      {[0, 1, 2, 3, 4, 5].map(value => (
-                        <Grid xs={4} key={value} item>
-                          <a href="/article1">
-                            <Paper style={{background:'#fff', backgroundImage:'url("/images/dummy/00'+value+'.png")',
-                             height: 300, backgroundSize:'cover', backgroundPosition:'center',backgroundPositionY:'-40px',backgroundRepeat:'no-repeat', borderRadius:'3px'}}/>
-                          </a>
-                        </Grid>
-                      ))}
-                      </Grid>
-                    </Grid>
-                </div>
-              </div>
+
+      <Grid item xs={12}>
+        <div style={{'maxWidth':'1200px', margin:'0 auto'}}>
+          <div style={tagLineStyle}>
+            <span id="learnmore"/>
+            <h1 style={tagLineFontStyle}>Why Be Heard?</h1>
+
+            <Grid item xs={6} style={{textAlign:'center', margin:'0 auto'}}>
+              <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem ipsum </p>
             </Grid>
-      </Paper>
+
+            <Grid item xs={12} style={flexContainerStyle}>
+                <Grid xs={4} item>
+                  <div className='item'>
+                    <img style={{height:'150px'}} src="/images/dummy/placeholder1.png"/>
+                    <h1>100 Signups in 1 day</h1>
+                    <p>Join us on Facebook</p>
+                  </div>
+                </Grid>
+
+                <Grid xs={4} item>
+                  <div className='item'>
+                    <img style={{height:'150px'}} src="/images/dummy/placeholder1.png"/>
+                      <h1>Turn ideas into action</h1>
+                      <p>Working between the government and the people to facilitate real outcomes from online discussions and opinions.</p>
+                  </div>
+                </Grid>
+
+                <Grid xs={4} item>
+                  <div className='item'>
+                    <img style={{height:'150px'}} src="/images/dummy/placeholder1.png"/>
+                      <h1>Everybody welcome</h1>
+                      <p>Associated with Understanding Gibraltar - all backgrounds and religions opinions count</p>
+                  </div>
+                </Grid>
+
+                <Grid xs={6} item>
+                  <div className='item'>
+                    <h1>Vote on what matters to you</h1>
+                  </div>
+                </Grid>
+                <Grid xs={6} item>
+                  <Paper className='item'>
+                    uo
+                  </Paper>
+                </Grid>
+
+                <Grid xs={6} item>
+                  <div className='item'>
+                    <Paper className='item'>
+                      uo
+                    </Paper>
+                  </div>
+                </Grid>
+                <Grid xs={6} item>
+                  <div className='item'>
+                    <h1>Understand opinions through data</h1>
+                  </div>
+                </Grid>
+
+                <Grid xs={6} item>
+                  <div className='item'>
+                    <h1>Vote on what matters to you</h1>
+                  </div>
+                </Grid>
+                <Grid xs={6} item>
+                  <Paper className='item'>
+                    uo
+                  </Paper>
+                </Grid>
+
+            </Grid>
+
+          </div>
+        </div>
+      </Grid>
     </div>
   );
 };
