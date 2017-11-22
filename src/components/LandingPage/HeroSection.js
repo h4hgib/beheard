@@ -93,7 +93,7 @@ const StyledPaper = styled(Paper)`
 `;
 
 const StyledButton = styled(Button)`
-  margin-left:5px;
+  margin-left:8px;
   color: rgb(44,152,240);
   background-color:#f9f9f9;
 `;
