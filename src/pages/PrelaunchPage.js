@@ -16,10 +16,22 @@ const PrelaunchPage = function PrelaunchPage(props) {
     marginBottom:'25px'
   }
 
+  var titleFontStyle = {
+    fontSize:'32px',
+    color: 'rgb(20, 44, 93)',
+    fontWeight:200, margin:'0px',
+    marginBottom:'25px',
+    textAlign:'left'
+  }
+
   var subTitleFontStyle = {
     fontSize:'22px',
     color: 'rgb(20, 44, 93)',
     fontWeight:200, margin:'0px',
+  }
+
+  var headerPanelStyle = {
+    padding:'25px'
   }
 
   var flexContainerStyle = {
@@ -36,7 +48,7 @@ const PrelaunchPage = function PrelaunchPage(props) {
       <HeroSection></HeroSection>
 
       <Grid item xs={12} style={{background:'#fff'}}>
-        <div style={{'maxWidth':'1200px', margin:'1px auto'}}>
+        <div style={{'maxWidth':'900px', margin:'1px auto'}}>
           <div style={tagLineStyle}>
             <span id="learnmore"/>
             <h1 style={tagLineFontStyle}>Why Be Heard?</h1>
@@ -71,38 +83,36 @@ const PrelaunchPage = function PrelaunchPage(props) {
                 </Grid>
 
                 <Grid xs={6} item>
-                  <div className='item'>
-                    <h1 style={tagLineFontStyle}>Turn opinion into action</h1>
+                  <div style={headerPanelStyle}>
+                    <h1 style={titleFontStyle}>Turn opinion into action</h1>
                   </div>
                 </Grid>
                 <Grid xs={6} item>
-                  <Paper className='item'>
-                    uo
-                  </Paper>
+                  <StyledPaper className='item'>
+                  </StyledPaper>
                 </Grid>
 
                 <Grid xs={6} item>
                   <div className='item'>
-                    <Paper className='item'>
-                      uo
-                    </Paper>
+                    <StyledPaper className='item'>
+
+                    </StyledPaper>
                   </div>
                 </Grid>
                 <Grid xs={6} item>
-                  <div className='item'>
-                    <h1 style={tagLineFontStyle}>See live data</h1>
+                  <div style={headerPanelStyle}>
+                    <h1 style={titleFontStyle}>See live data</h1>
                   </div>
                 </Grid>
 
                 <Grid xs={6} item>
-                  <div className='item'>
-                    <h1 style={tagLineFontStyle}>Vote on what matters to you</h1>
+                  <div style={headerPanelStyle}>
+                    <h1 style={titleFontStyle}>Vote on what matters to you</h1>
                   </div>
                 </Grid>
                 <Grid xs={6} item>
-                  <Paper className='item'>
-                    uo
-                  </Paper>
+                  <StyledPaper className='item'>
+                  </StyledPaper>
                 </Grid>
 
             </Grid>
@@ -116,3 +126,9 @@ const PrelaunchPage = function PrelaunchPage(props) {
 
 
 export default PrelaunchPage;
+
+const StyledPaper = styled(Paper)`
+    height:250px;
+    margin:25px;
+    border-radius:4px;
+`;
