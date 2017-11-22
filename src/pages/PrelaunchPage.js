@@ -64,7 +64,7 @@ const PrelaunchPage = function PrelaunchPage(props) {
     <div>
       <HeroSection></HeroSection>
 
-      <Grid item xs={12} style={{background:'#f9f9f9'}}>
+      <Grid item xs={12} style={{background:'#fff'}}>
         <div style={{'maxWidth':'900px', margin:'1px auto', paddingBottom:50}}>
           <div style={tagLineStyle}>
             <span id="learnmore"/>
