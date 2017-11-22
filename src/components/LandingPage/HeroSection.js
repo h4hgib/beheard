@@ -8,6 +8,7 @@ import Grid from 'material-ui/Grid';
 import Navbar from '@trendmicro/react-navbar';
 import StickyNavbar from './StickyNavbar';
 import LoginAvatar from "../LoginAvatar";
+import {Fade} from 'react-reveal';
 
 
 class HeroSection extends React.Component {
@@ -71,20 +72,28 @@ class HeroSection extends React.Component {
       <div style={divStyle}>
         <Grid item xs={12}>
          <StyledPaper>
-           <div style={backgroundArea}>
-             <Grid item xs={6} sm={3}>
-               <div style={logoBox}>
-                    <div style={logoContainer}>
-                      <img style={logoStyles} src="/images/logo.png"/>
-                        <h2 style={{color:'rgb(20,44,93)', margin:'3px',marginTop:'-5px', fontSize:'28px', fontWeight:400}}>The #1 platform in Gibraltar for social understanding</h2>
-                          <div style={{marginTop:'15px'}}>
-                            <StyledLoginAvatar loginText="Get Early Access" color="primary"/>
-                            <a href="#learnmore"><StyledButton raised color="contrast">Learn more</StyledButton></a>
-                          </div>
-                    </div>
-                </div>
-             </Grid>
-           </div>
+             <div style={backgroundArea}>
+               <Grid item xs={6} sm={3}>
+                 <div style={logoBox}>
+                      <div style={logoContainer}>
+                        <Fade bottom delay="300" duration="800">
+                          <img style={logoStyles} src="/images/logo.png"/>
+                        </Fade>
+                        <Fade bottom delay="500" duration="800">
+                            <h2 style={{color:'rgb(20,44,93)', margin:'3px',marginTop:'-5px', fontSize:'28px', fontWeight:400}}>
+                              The #1 platform in Gibraltar for social understanding
+                            </h2>
+                        </Fade>
+                        <Fade bottom delay="700" duration="800">
+                            <div style={{marginTop:'15px'}}>
+                              <StyledLoginAvatar loginText="Get Early Access" color="primary"/>
+                              <a href="#learnmore"><StyledButton raised color="contrast">Learn more</StyledButton></a>
+                            </div>
+                        </Fade>
+                      </div>
+                  </div>
+               </Grid>
+             </div>
            <div style={{height:'5vh', width:'100%', background:'#fff'}}></div>
           </StyledPaper>
        </Grid>

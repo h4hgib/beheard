@@ -25,6 +25,7 @@
     "react-jss": "latest",
     "react-loading-skeleton": "^0.3.2",
     "react-mic": "^9.0.0",
+    "react-reveal": "^0.7.3",
     "react-router-dom": "^4.2.2",
     "react-scripts": "latest",
     "react-sticky": "^5.0.8",
