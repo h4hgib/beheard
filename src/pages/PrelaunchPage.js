@@ -7,7 +7,6 @@ import Grid from 'material-ui/Grid';
 
 const PrelaunchPage = function PrelaunchPage(props) {
   var tagLineStyle = {
-    background:'#fff', width:'100%',
     padding:'15px', textAlign:'center'
   }
   var tagLineFontStyle = {
@@ -20,19 +19,15 @@ const PrelaunchPage = function PrelaunchPage(props) {
   return (
     <div>
       <HeroSection></HeroSection>
-      <Paper>
-        <div>
-          <div style={{'maxWidth':'1200px', margin:'0 auto'}}>
+      <Paper style={{marginTop:'1px', background:'#f6f6f6'}}>
              <Grid item xs={12}>
+               <div style={{'maxWidth':'1200px', margin:'0 auto'}}>
                 <div style={tagLineStyle}>
                   <h1 style={tagLineFontStyle}>Why Be Heard?</h1>
                 </div>
+              </div>
             </Grid>
-          </div>
-
-          <div style={{marginTop:'100px','height':'200px', width:'100%', background:'#eaeaea'}}></div>
-        </div>
-            </Paper>
+      </Paper>
     </div>
   );
 };

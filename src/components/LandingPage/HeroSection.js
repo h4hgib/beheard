@@ -38,7 +38,7 @@ class HeroSection extends React.Component {
     var logoContainer={
       height:'70px',
       left:0, right:0,
-      top:'3vh', bottom:0,
+      top:'6vh', bottom:0,
       margin:'auto',
       position:'absolute',
     }
@@ -58,23 +58,34 @@ class HeroSection extends React.Component {
       color: 'rgb(20, 44, 93)',
       fontWeight:200, margin:'0px'
     }
+    var backgroundArea = {
+      backgroundImage: 'url("/images/bg.svg")',
+      backgroundSize: 'contain',
+      backgroundPosition:'center',
+      backgroundRepeat:'no-repeat',
+      height:'95vh',
+      width:'100%',
+    }
 
     return (
       <div style={divStyle}>
         <Grid item xs={12}>
          <StyledPaper>
-           <Grid item xs={6} sm={3}>
-             <div style={logoBox}>
-                  <div style={logoContainer}>
-                    <img style={logoStyles} src="/images/logo.png"/>
-                      <h2 style={{color:'rgb(20,44,93)', margin:'3px',marginTop:'-5px', fontSize:'28px', fontWeight:400}}>The #1 platform in Gibraltar for social understanding</h2>
-                        <div style={{marginTop:'15px'}}>
-                          <StyledLoginAvatar loginText="Get Early Access" color="primary"/>
-                          <StyledButton raised color="contrast">Learn more</StyledButton>
-                        </div>
-                  </div>
-              </div>
-           </Grid>
+           <div style={backgroundArea}>
+             <Grid item xs={6} sm={3}>
+               <div style={logoBox}>
+                    <div style={logoContainer}>
+                      <img style={logoStyles} src="/images/logo.png"/>
+                        <h2 style={{color:'rgb(20,44,93)', margin:'3px',marginTop:'-5px', fontSize:'28px', fontWeight:400}}>The #1 platform in Gibraltar for social understanding</h2>
+                          <div style={{marginTop:'15px'}}>
+                            <StyledLoginAvatar loginText="Get Early Access" color="primary"/>
+                            <StyledButton raised color="contrast">Learn more</StyledButton>
+                          </div>
+                    </div>
+                </div>
+             </Grid>
+           </div>
+           <div style={{height:'5vh', width:'100%', background:'#fff'}}></div>
           </StyledPaper>
        </Grid>
       </div>
@@ -85,11 +96,7 @@ class HeroSection extends React.Component {
 export default HeroSection;
 
 const StyledPaper = styled(Paper)`
-    height:90vh;
-    background-image: url("/images/bgsvg.svg");
-    background-size: contain;
-    background-position:center;
-    background-repeat:no-repeat;
+    height:100vh;
 `;
 
 const StyledButton = styled(Button)`
